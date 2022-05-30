@@ -17,6 +17,7 @@ public class User {
     public String lastName;
     public String username;
     public String password;
+    public String key;
     public String email;
     public String address;
     public String phoneNumber;
@@ -36,11 +37,13 @@ public class User {
                 Date dateOfBirth){
 
         String id = java.util.UUID.randomUUID().toString();
+        String key = java.util.UUID.randomUUID().toString();
         this.id = "user_" + id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.username = username;
         this.password = password;
+        this.key = key;
         this.email = email;
         this.address = address;
         this.phoneNumber = phoneNumber;
@@ -53,11 +56,13 @@ public class User {
     public User(UserDTO userDTO){
 
         String id = java.util.UUID.randomUUID().toString();
+        String key = java.util.UUID.randomUUID().toString();
         this.id = "user_" + id;
         this.firstName = userDTO.firstName;
         this.lastName = userDTO.lastName;
         this.username = userDTO.username;
         this.password = userDTO.password;
+        this.key = key;
         this.email = userDTO.email;
         this.address = userDTO.address;
         this.phoneNumber = userDTO.phoneNumber;

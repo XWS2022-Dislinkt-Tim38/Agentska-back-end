@@ -14,6 +14,7 @@ public class UserDTO {
     public String lastName;
     public String username;
     public String password;
+    public String key;
     public String email;
     public String address;
     public String phoneNumber;
@@ -29,6 +30,7 @@ public class UserDTO {
         this.lastName = user.lastName;
         this.username = user.username;
         this.password = user.password;
+        this.key = user.key;
         this.email = user.email;
         this.address = user.address;
         this.phoneNumber = user.phoneNumber;
