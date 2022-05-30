@@ -1,4 +1,4 @@
-package com.example.dislinktagentskaapp.security;
+package com.example.dislinktagentskaapp.security.auth;
 
 import org.springframework.security.authentication.AbstractAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;

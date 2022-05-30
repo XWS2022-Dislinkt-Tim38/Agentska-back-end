@@ -33,9 +33,11 @@ public class CustomUserDetails implements UserDetails {
         return user.username;
     }
 
+    public String getRole() { return user.role.toString();}
+
     @Override
     public boolean isAccountNonExpired() {
-        return false;
+        return true;
     }
 
     @Override
@@ -45,11 +47,11 @@ public class CustomUserDetails implements UserDetails {
 
     @Override
     public boolean isCredentialsNonExpired() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isEnabled() {
-        return user.isVerified;
+        return true;
     }
 }

@@ -1,4 +1,4 @@
-package com.example.dislinktagentskaapp.security;
+package com.example.dislinktagentskaapp.security.auth;
 
 import io.jsonwebtoken.ExpiredJwtException;
 import org.apache.commons.logging.Log;

@@ -1,7 +1,7 @@
 package com.example.dislinktagentskaapp.security.config;
 
-import com.example.dislinktagentskaapp.security.RestAuthenticationEntryPoint;
-import com.example.dislinktagentskaapp.security.TokenAuthenticationFilter;
+import com.example.dislinktagentskaapp.security.auth.RestAuthenticationEntryPoint;
+import com.example.dislinktagentskaapp.security.auth.TokenAuthenticationFilter;
 import com.example.dislinktagentskaapp.security.util.TokenUtils;
 import com.example.dislinktagentskaapp.service.implementation.CustomUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -56,6 +56,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
                 .exceptionHandling().authenticationEntryPoint(restAuthenticationEntryPoint).and()
                 .authorizeRequests()
+                .antMatchers("/auth/login").permitAll()
                 .antMatchers("/user/test").permitAll()
                 .antMatchers("/user/{id}").permitAll()
                 .antMatchers("/user/username/{username}").permitAll()
@@ -71,6 +72,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     public void configure(WebSecurity web) throws Exception {
         web.ignoring().antMatchers(HttpMethod.POST, "/**");
+        web.ignoring().antMatchers(HttpMethod.POST, "/auth/login");
         web.ignoring().antMatchers(HttpMethod.GET, "/user/{id}");
         web.ignoring().antMatchers(HttpMethod.GET, "/user");
         web.ignoring().antMatchers(HttpMethod.GET, "/user/test");

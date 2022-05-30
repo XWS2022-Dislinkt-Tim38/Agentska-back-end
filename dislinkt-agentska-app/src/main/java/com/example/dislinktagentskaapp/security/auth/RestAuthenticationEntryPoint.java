@@ -1,4 +1,4 @@
-package com.example.dislinktagentskaapp.security;
+package com.example.dislinktagentskaapp.security.auth;
 
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;
