@@ -3,6 +3,7 @@ package com.example.dislinktagentskaapp.service.implementation;
 import com.example.dislinktagentskaapp.dto.UserDTO;
 import com.example.dislinktagentskaapp.exception.UserNotFoundException;
 import com.example.dislinktagentskaapp.exception.UsernameExistsException;
+import com.example.dislinktagentskaapp.model.Role;
 import com.example.dislinktagentskaapp.model.User;
 import com.example.dislinktagentskaapp.repository.UserRepository;
 import com.example.dislinktagentskaapp.service.UserService;
@@ -86,5 +87,12 @@ public class UserServiceImplementation implements UserService {
     public UserDTO getUserByUsername(String username){
         User user = userRepository.findByUsername(username);
         return new UserDTO(user);
+    }
+
+    @Override
+    public void changeRole(String idUser, Role role) {
+        User user = userRepository.findById(idUser).orElseThrow(UserNotFoundException::new);
+        user.role = role;
+        userRepository.save(user);
     }
 }

@@ -34,4 +34,12 @@ public class GlobalExceptionHandler {
         return "User not found!";
     }
 
+    @ExceptionHandler(RequestNotFoundException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    @ResponseBody
+    public String requestNotFound(RequestNotFoundException e){
+        LOGGER.error(e.getMessage(), e);
+        return "Request not found!";
+    }
+
 }

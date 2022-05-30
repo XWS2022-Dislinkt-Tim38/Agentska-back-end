@@ -1,5 +1,6 @@
-package com.example.dislinktagentskaapp.model;
+package com.example.dislinktagentskaapp.model.helper;
 
+import com.example.dislinktagentskaapp.model.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

@@ -1,6 +1,7 @@
 package com.example.dislinktagentskaapp.service;
 
 import com.example.dislinktagentskaapp.dto.UserDTO;
+import com.example.dislinktagentskaapp.model.Role;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import java.util.List;
@@ -13,5 +14,6 @@ public interface UserService {
     void updateUser(UserDTO updateUserDTO);
     void deleteUser(String id);
     UserDTO getUserByUsername(String username);
+    void changeRole(String idUser, Role role);
 
 }

@@ -1,6 +1,6 @@
 package com.example.dislinktagentskaapp.service.implementation;
 
-import com.example.dislinktagentskaapp.model.CustomUserDetails;
+import com.example.dislinktagentskaapp.model.helper.CustomUserDetails;
 import com.example.dislinktagentskaapp.model.User;
 import com.example.dislinktagentskaapp.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;

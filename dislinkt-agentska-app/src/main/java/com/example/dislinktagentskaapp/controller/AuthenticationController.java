@@ -2,8 +2,7 @@ package com.example.dislinktagentskaapp.controller;
 
 import com.example.dislinktagentskaapp.dto.AuthenticationRequest;
 import com.example.dislinktagentskaapp.dto.UserTokenState;
-import com.example.dislinktagentskaapp.model.CustomUserDetails;
-import com.example.dislinktagentskaapp.model.User;
+import com.example.dislinktagentskaapp.model.helper.CustomUserDetails;
 import com.example.dislinktagentskaapp.security.util.TokenUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
