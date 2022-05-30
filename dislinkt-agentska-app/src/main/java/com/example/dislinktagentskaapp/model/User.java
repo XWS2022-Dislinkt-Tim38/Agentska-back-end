@@ -27,6 +27,7 @@ public class User {
     public boolean isVerified;
     public List<Company> companies;
 
+    public User() {}
     public User(String firstName,
                 String lastName,
                 String username,
@@ -49,7 +50,7 @@ public class User {
         this.phoneNumber = phoneNumber;
         this.dateOfBirth = dateOfBirth;
         this.role = Role.USER;
-        this.isVerified = false;
+        this.isVerified = true;
         this.companies = new ArrayList<>();
     }
 
@@ -68,7 +69,7 @@ public class User {
         this.phoneNumber = userDTO.phoneNumber;
         this.dateOfBirth = userDTO.dateOfBirth;
         this.role = Role.USER;
-        this.isVerified = false;
+        this.isVerified = true;
         this.companies = new ArrayList<>();
 
     }

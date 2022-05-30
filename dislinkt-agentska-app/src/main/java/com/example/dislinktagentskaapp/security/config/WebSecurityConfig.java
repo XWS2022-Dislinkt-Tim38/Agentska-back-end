@@ -3,7 +3,7 @@ package com.example.dislinktagentskaapp.security.config;
 import com.example.dislinktagentskaapp.security.RestAuthenticationEntryPoint;
 import com.example.dislinktagentskaapp.security.TokenAuthenticationFilter;
 import com.example.dislinktagentskaapp.security.util.TokenUtils;
-import com.example.dislinktagentskaapp.service.CustomUserDetailsService;
+import com.example.dislinktagentskaapp.service.implementation.CustomUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -57,6 +57,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .exceptionHandling().authenticationEntryPoint(restAuthenticationEntryPoint).and()
                 .authorizeRequests()
                 .antMatchers("/user/test").permitAll()
+                .antMatchers("/user/{id}").permitAll()
+                .antMatchers("/user/username/{username}").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .cors()
@@ -73,7 +75,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         web.ignoring().antMatchers(HttpMethod.GET, "/user");
         web.ignoring().antMatchers(HttpMethod.GET, "/user/test");
         web.ignoring().antMatchers(HttpMethod.PUT, "/**");
-        web.ignoring().antMatchers(HttpMethod.DELETE, "/user/{id}");
+        web.ignoring().antMatchers(HttpMethod.DELETE, "/**");
         web.ignoring().antMatchers(HttpMethod.GET, "/token/**");
         web.ignoring().antMatchers(HttpMethod.GET, "/", "/webjars/**", "/*.html", "favicon.ico", "/**/*.html",
                 "/**/*.css", "/**/*.js");

@@ -24,6 +24,7 @@ public class UserDTO {
     public boolean isVerified;
     public List<Company> companies;
 
+    public UserDTO() {}
     public UserDTO(User user){
         this.id = user.id;
         this.firstName = user.firstName;

@@ -1,4 +1,4 @@
-package com.example.dislinktagentskaapp.service;
+package com.example.dislinktagentskaapp.service.implementation;
 
 import com.example.dislinktagentskaapp.model.CustomUserDetails;
 import com.example.dislinktagentskaapp.model.User;
@@ -17,7 +17,7 @@ public class CustomUserDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User user = userRepository.getUserByUsername(username);
+        User user = userRepository.findByUsername(username);
         if (user == null) {
             throw new UsernameNotFoundException(String.format("No user found with username '%s'.", username));
         } else {
