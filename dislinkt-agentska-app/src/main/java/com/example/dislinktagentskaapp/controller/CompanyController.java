@@ -26,4 +26,14 @@ public class CompanyController {
         CompanyDTO company = userService.addCompanyToUser(newCompanyDto, idUser);
         return new ResponseEntity<>(company, HttpStatus.OK);
     }
+
+    @PutMapping
+    public ResponseEntity<Object> editCompany(@RequestBody CompanyDTO editCompanyDto,
+                                              @RequestParam (value = "idUser") String idUser){
+        boolean response = userService.editCompany(editCompanyDto, idUser);
+        if(response)
+            return new ResponseEntity<>("Company successfully updated!", HttpStatus.OK);
+        else
+            return new ResponseEntity<>("Company not found!", HttpStatus.BAD_REQUEST);
+    }
 }

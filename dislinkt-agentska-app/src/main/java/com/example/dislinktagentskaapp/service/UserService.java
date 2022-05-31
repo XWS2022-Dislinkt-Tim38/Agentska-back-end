@@ -17,5 +17,6 @@ public interface UserService {
     UserDTO getUserByUsername(String username);
     void changeRole(String idUser, Role role);
     CompanyDTO addCompanyToUser(CompanyDTO newCompanyDTO, String idUser);
+    boolean editCompany(CompanyDTO editCompanyDTO, String idUser);
 
 }

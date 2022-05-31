@@ -106,4 +106,20 @@ public class UserServiceImplementation implements UserService {
         userRepository.save(user);
         return new CompanyDTO(company);
     }
+
+    @Override
+    public boolean editCompany(CompanyDTO editCompanyDTO, String idUser) {
+        boolean response = false;
+        User user = userRepository.findById(idUser).orElseThrow(UserNotFoundException::new);
+        for(Company company : user.companies)
+            if(company.id.equals(editCompanyDTO.id)){
+                company.name = editCompanyDTO.name;
+                company.address = editCompanyDTO.address;
+                company.comments = editCompanyDTO.comments;
+                response = true;
+                break;
+            }
+        userRepository.save(user);
+        return response;
+    }
 }
