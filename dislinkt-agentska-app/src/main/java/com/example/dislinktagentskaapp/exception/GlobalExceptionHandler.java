@@ -42,4 +42,12 @@ public class GlobalExceptionHandler {
         return "Request not found!";
     }
 
+    @ExceptionHandler(CompanyNotFoundException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    @ResponseBody
+    public String companyNotFound(CompanyNotFoundException e){
+        LOGGER.error(e.getMessage(), e);
+        return "Company not found!";
+    }
+
 }

@@ -22,7 +22,6 @@ public class UserDTO {
 
     public Role role;
     public boolean isVerified;
-    public List<Company> companies;
 
     public UserDTO() {}
     public UserDTO(User user){
@@ -38,6 +37,5 @@ public class UserDTO {
         this.dateOfBirth = user.dateOfBirth;
         this.role = user.role;
         this.isVerified = user.isVerified;
-        this.companies = user.companies;
     }
 }

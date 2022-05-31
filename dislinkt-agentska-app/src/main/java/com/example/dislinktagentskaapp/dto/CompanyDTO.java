@@ -7,6 +7,7 @@ import java.util.List;
 public class CompanyDTO {
 
     public String id;
+    public String idUser;
     public String name;
     public String address;
     public List<String> comments;
@@ -14,6 +15,7 @@ public class CompanyDTO {
     public CompanyDTO(){}
     public CompanyDTO(Company company){
         this.id = company.id;
+        this.idUser = company.id;
         this.name = company.name;
         this.address = company.address;
         this.comments = company.comments;

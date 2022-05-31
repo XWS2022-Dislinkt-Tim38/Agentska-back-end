@@ -74,6 +74,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.csrf().disable();
     }
 
+    //Ignoring postavljen na vecinu radi testiranja samo
     @Override
     public void configure(WebSecurity web) throws Exception {
         web.ignoring().antMatchers(HttpMethod.POST, "/**");
@@ -81,6 +82,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         web.ignoring().antMatchers(HttpMethod.PUT, "/request");
         web.ignoring().antMatchers(HttpMethod.POST, "/company");
         web.ignoring().antMatchers(HttpMethod.PUT, "/company");
+        web.ignoring().antMatchers(HttpMethod.GET, "/company");
         web.ignoring().antMatchers(HttpMethod.POST, "/auth/login");
         web.ignoring().antMatchers(HttpMethod.GET, "/user/{id}");
         web.ignoring().antMatchers(HttpMethod.GET, "/user");

@@ -71,7 +71,6 @@ public class UserServiceImplementation implements UserService {
         userToUpdate.phoneNumber = updateUserDTO.phoneNumber;
         userToUpdate.key = updateUserDTO.key;
         userToUpdate.role = updateUserDTO.role;
-        userToUpdate.companies = updateUserDTO.companies;
         userRepository.save(userToUpdate);
     }
 
@@ -98,28 +97,4 @@ public class UserServiceImplementation implements UserService {
         userRepository.save(user);
     }
 
-    @Override
-    public CompanyDTO addCompanyToUser(CompanyDTO newCompanyDTO, String idUser) {
-        Company company = new Company(newCompanyDTO);
-        User user = userRepository.findById(idUser).orElseThrow(UserNotFoundException::new);
-        user.companies.add(company);
-        userRepository.save(user);
-        return new CompanyDTO(company);
-    }
-
-    @Override
-    public boolean editCompany(CompanyDTO editCompanyDTO, String idUser) {
-        boolean response = false;
-        User user = userRepository.findById(idUser).orElseThrow(UserNotFoundException::new);
-        for(Company company : user.companies)
-            if(company.id.equals(editCompanyDTO.id)){
-                company.name = editCompanyDTO.name;
-                company.address = editCompanyDTO.address;
-                company.comments = editCompanyDTO.comments;
-                response = true;
-                break;
-            }
-        userRepository.save(user);
-        return response;
-    }
 }
