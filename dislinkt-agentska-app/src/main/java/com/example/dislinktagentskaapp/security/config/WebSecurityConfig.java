@@ -58,6 +58,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/auth/login").permitAll()
                 .antMatchers("/user/test").permitAll()
+                .antMatchers("/request/test").permitAll()
+                .antMatchers("/company/test").permitAll()
                 .antMatchers("/user/{id}").permitAll()
                 .antMatchers("/user/username/{username}").permitAll()
                 .anyRequest().authenticated()
@@ -65,7 +67,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .cors()
                 .and()
 
-                .addFilterBefore(new TokenAuthenticationFilter(tokenUtils, customUserDetailsService), BasicAuthenticationFilter.class);
+                .addFilterBefore(new TokenAuthenticationFilter(
+                        tokenUtils,
+                        customUserDetailsService),
+                        BasicAuthenticationFilter.class);
         http.csrf().disable();
     }
 
@@ -74,6 +79,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         web.ignoring().antMatchers(HttpMethod.POST, "/**");
         web.ignoring().antMatchers(HttpMethod.POST, "/request");
         web.ignoring().antMatchers(HttpMethod.PUT, "/request");
+        web.ignoring().antMatchers(HttpMethod.POST, "/company");
+        web.ignoring().antMatchers(HttpMethod.PUT, "/company");
         web.ignoring().antMatchers(HttpMethod.POST, "/auth/login");
         web.ignoring().antMatchers(HttpMethod.GET, "/user/{id}");
         web.ignoring().antMatchers(HttpMethod.GET, "/user");

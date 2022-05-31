@@ -1,8 +1,10 @@
 package com.example.dislinktagentskaapp.service.implementation;
 
+import com.example.dislinktagentskaapp.dto.CompanyDTO;
 import com.example.dislinktagentskaapp.dto.UserDTO;
 import com.example.dislinktagentskaapp.exception.UserNotFoundException;
 import com.example.dislinktagentskaapp.exception.UsernameExistsException;
+import com.example.dislinktagentskaapp.model.Company;
 import com.example.dislinktagentskaapp.model.Role;
 import com.example.dislinktagentskaapp.model.User;
 import com.example.dislinktagentskaapp.repository.UserRepository;
@@ -94,5 +96,14 @@ public class UserServiceImplementation implements UserService {
         User user = userRepository.findById(idUser).orElseThrow(UserNotFoundException::new);
         user.role = role;
         userRepository.save(user);
+    }
+
+    @Override
+    public CompanyDTO addCompanyToUser(CompanyDTO newCompanyDTO, String idUser) {
+        Company company = new Company(newCompanyDTO);
+        User user = userRepository.findById(idUser).orElseThrow(UserNotFoundException::new);
+        user.companies.add(company);
+        userRepository.save(user);
+        return new CompanyDTO(company);
     }
 }

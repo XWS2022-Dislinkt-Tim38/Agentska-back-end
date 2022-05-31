@@ -1,5 +1,6 @@
 package com.example.dislinktagentskaapp.service;
 
+import com.example.dislinktagentskaapp.dto.CompanyDTO;
 import com.example.dislinktagentskaapp.dto.UserDTO;
 import com.example.dislinktagentskaapp.model.Role;
 import org.springframework.stereotype.Component;
@@ -15,5 +16,6 @@ public interface UserService {
     void deleteUser(String id);
     UserDTO getUserByUsername(String username);
     void changeRole(String idUser, Role role);
+    CompanyDTO addCompanyToUser(CompanyDTO newCompanyDTO, String idUser);
 
 }
