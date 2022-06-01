@@ -7,6 +7,7 @@ import java.util.List;
 
 public class JobOffer {
 
+    public String idUser;
     public String title;
     public String content;
     public String company;
@@ -22,8 +23,9 @@ public class JobOffer {
     public JobOffer() {}
 
     public JobOffer(JobOfferDTO jobOfferDTO){
+        this.idUser = jobOfferDTO.idUser;
         this.title = jobOfferDTO.title;
-        this.company = jobOfferDTO.content;
+        this.content = jobOfferDTO.content;
         this.company = jobOfferDTO.company;
         this.industry = jobOfferDTO.industry;
         this.field = jobOfferDTO.field;

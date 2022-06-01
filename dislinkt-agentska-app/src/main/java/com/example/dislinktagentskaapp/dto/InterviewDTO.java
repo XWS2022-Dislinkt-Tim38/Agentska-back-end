@@ -9,6 +9,7 @@ import java.util.List;
 
 public class InterviewDTO {
 
+    public String idUser;
     public int easyDifficultyCount;
     public int mediumDifficultyCount;
     public int hardDifficultyCount;
@@ -17,15 +18,21 @@ public class InterviewDTO {
 
     public InterviewDTO() {}
     public InterviewDTO(Interview interview){
+
+        this.idUser = interview.idUser;
         this.easyDifficultyCount = interview.easyDifficultyCount;
         this.mediumDifficultyCount = interview.mediumDifficultyCount;
         this.hardDifficultyCount = interview.hardDifficultyCount;
         this.averageSelectionDuration = interview.averageSelectionDuration;
+        this.commentsDTO = mapCommentsToDTO(interview.comments);
+    }
 
-        this.commentsDTO = new ArrayList<>();
-        for(Comment comment : interview.comments){
+    private List<CommentDTO> mapCommentsToDTO(List<Comment> comments){
+        List<CommentDTO> commentsDTO = new ArrayList<>();
+        for(Comment comment : comments)
             commentsDTO.add(new CommentDTO(comment));
-        }
+
+        return commentsDTO;
     }
 
 }
