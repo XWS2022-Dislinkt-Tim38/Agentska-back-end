@@ -1,10 +1,10 @@
 package com.example.dislinktagentskaapp.service.implementation;
 
 import com.example.dislinktagentskaapp.dto.CompanyDTO;
+import com.example.dislinktagentskaapp.dto.CompanyDetailsDTO;
 import com.example.dislinktagentskaapp.exception.CompanyNotFoundException;
-import com.example.dislinktagentskaapp.exception.UserNotFoundException;
 import com.example.dislinktagentskaapp.model.Company;
-import com.example.dislinktagentskaapp.model.User;
+import com.example.dislinktagentskaapp.model.CompanyDetails;
 import com.example.dislinktagentskaapp.repository.CompanyRepository;
 import com.example.dislinktagentskaapp.service.CompanyService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +25,8 @@ public class CompanyServiceImplementation implements CompanyService {
         companyRepository.save(company);
         return new CompanyDTO(company);
     }
+
+    //TODO: Get Company By ID
 
     @Override
     public List<CompanyDTO> getAllCompanies() {
@@ -47,5 +49,13 @@ public class CompanyServiceImplementation implements CompanyService {
         companyToUpdate.companyDetails = updateCompanyDTO.companyDetails;
         companyRepository.save(companyToUpdate);
 
+    }
+
+    @Override
+    public void updateCompanyDetails(CompanyDetailsDTO companyDetailsDTO) {
+        Company companyToUpdate = companyRepository.findById(companyDetailsDTO.companyId)
+                .orElseThrow(CompanyNotFoundException::new);
+        companyToUpdate.companyDetails = new CompanyDetails(companyDetailsDTO);
+        companyRepository.save(companyToUpdate);
     }
 }

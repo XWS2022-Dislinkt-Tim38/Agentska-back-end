@@ -1,6 +1,7 @@
 package com.example.dislinktagentskaapp.controller;
 
 import com.example.dislinktagentskaapp.dto.CompanyDTO;
+import com.example.dislinktagentskaapp.dto.CompanyDetailsDTO;
 import com.example.dislinktagentskaapp.service.CompanyService;
 import com.example.dislinktagentskaapp.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,9 +37,16 @@ public class CompanyController {
     }
 
     @PutMapping
-    public ResponseEntity<Object> updateCompany(@RequestBody CompanyDTO editCompanyDto){
-        companyService.updateCompany(editCompanyDto);
+    public ResponseEntity<Object> updateCompany(@RequestBody CompanyDTO updateCompanyDTO){
+        companyService.updateCompany(updateCompanyDTO);
         return new ResponseEntity<>("Company successfully updated!", HttpStatus.OK);
+
+    }
+
+    @PutMapping(value = "/details")
+    public ResponseEntity<Object> updateCompanyDetails(@RequestBody CompanyDetailsDTO updateCompanyDetailsDTO){
+        companyService.updateCompanyDetails(updateCompanyDetailsDTO);
+        return new ResponseEntity<>("Company details successfully updated!", HttpStatus.OK);
 
     }
 }
