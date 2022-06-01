@@ -6,6 +6,7 @@ import java.util.Date;
 
 public class Comment {
 
+    public String id;
     public String idUser;
     public String title;
     public String content;
@@ -16,11 +17,12 @@ public class Comment {
 
     public Comment(CommentDTO commentDTO){
 
+        this.id = java.util.UUID.randomUUID().toString();
         this.idUser = commentDTO.idUser;
         this.title = commentDTO.title;
         this.content = commentDTO.content;
-        this.datePosted = commentDTO.datePosted;
-        this.rating = commentDTO.rating;
+        this.datePosted = new Date();
+        this.rating = 0.0;
 
     }
 

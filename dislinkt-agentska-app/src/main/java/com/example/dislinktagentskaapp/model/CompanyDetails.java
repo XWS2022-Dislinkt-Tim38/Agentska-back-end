@@ -7,11 +7,9 @@ import java.util.Date;
 import java.util.List;
 
 public class CompanyDetails {
-
-    public String companyId;
     public String name;
     public String city;
-    public String address;
+    public String country;
     public Date foundation;
     public String numberOfEmployees;
     public double rating;
@@ -22,10 +20,10 @@ public class CompanyDetails {
 
     public CompanyDetails() {}
     public CompanyDetails(CompanyDetailsDTO companyDetailsDTO){
-        this.companyId = companyDetailsDTO.companyId;
+
         this.name = companyDetailsDTO.name;
         this.city = companyDetailsDTO.city;
-        this.address = companyDetailsDTO.address;
+        this.country = companyDetailsDTO.country;
         this.foundation = companyDetailsDTO.foundation;
         this.numberOfEmployees = companyDetailsDTO.numberOfEmployees;
         this.rating = companyDetailsDTO.rating;

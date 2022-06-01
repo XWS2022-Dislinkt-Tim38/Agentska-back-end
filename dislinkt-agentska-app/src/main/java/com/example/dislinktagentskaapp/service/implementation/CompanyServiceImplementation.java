@@ -52,8 +52,8 @@ public class CompanyServiceImplementation implements CompanyService {
     }
 
     @Override
-    public void updateCompanyDetails(CompanyDetailsDTO companyDetailsDTO) {
-        Company companyToUpdate = companyRepository.findById(companyDetailsDTO.companyId)
+    public void updateCompanyDetails(String companyId, CompanyDetailsDTO companyDetailsDTO) {
+        Company companyToUpdate = companyRepository.findById(companyId)
                 .orElseThrow(CompanyNotFoundException::new);
         companyToUpdate.companyDetails = new CompanyDetails(companyDetailsDTO);
         companyRepository.save(companyToUpdate);

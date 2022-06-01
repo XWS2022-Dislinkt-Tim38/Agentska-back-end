@@ -10,6 +10,6 @@ public interface CompanyService {
     CompanyDTO createCompany(CompanyDTO newCompanyDTO);
     List<CompanyDTO> getAllCompanies();
     void updateCompany(CompanyDTO editCompanyDTO);
-    void updateCompanyDetails(CompanyDetailsDTO companyDetailsDTO);
+    void updateCompanyDetails(String companyId, CompanyDetailsDTO companyDetailsDTO);
 
 }

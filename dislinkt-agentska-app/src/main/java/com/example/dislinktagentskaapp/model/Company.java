@@ -26,6 +26,9 @@ public class Company {
         this.idUser = companyDTO.idUser;
         this.companyDetails = companyDTO.companyDetails;
         this.comments = new ArrayList<>();
+        this.interview = new Interview();
+        this.salaries = new ArrayList<>();
+        this.jobOffers = new ArrayList<>();
 
     }
 }

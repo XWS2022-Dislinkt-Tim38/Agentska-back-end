@@ -4,6 +4,7 @@ import com.example.dislinktagentskaapp.model.Salary;
 
 public class SalaryDTO {
 
+    public String id;
     public String idUser;
     public String position;
     public String nettoSalary;
@@ -13,6 +14,8 @@ public class SalaryDTO {
     public SalaryDTO() {}
 
     public SalaryDTO(Salary salary){
+
+        this.id = salary.id;
         this.idUser = salary.idUser;
         this.position = salary.position;
         this.nettoSalary = salary.nettoSalary;

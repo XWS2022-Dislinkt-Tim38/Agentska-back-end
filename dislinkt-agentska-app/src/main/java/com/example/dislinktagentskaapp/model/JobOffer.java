@@ -7,6 +7,7 @@ import java.util.List;
 
 public class JobOffer {
 
+    public String id;
     public String idUser;
     public String title;
     public String content;
@@ -23,6 +24,8 @@ public class JobOffer {
     public JobOffer() {}
 
     public JobOffer(JobOfferDTO jobOfferDTO){
+
+        this.id = java.util.UUID.randomUUID().toString();
         this.idUser = jobOfferDTO.idUser;
         this.title = jobOfferDTO.title;
         this.content = jobOfferDTO.content;

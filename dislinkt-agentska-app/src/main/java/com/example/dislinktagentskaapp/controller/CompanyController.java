@@ -44,8 +44,9 @@ public class CompanyController {
     }
 
     @PutMapping(value = "/details")
-    public ResponseEntity<Object> updateCompanyDetails(@RequestBody CompanyDetailsDTO updateCompanyDetailsDTO){
-        companyService.updateCompanyDetails(updateCompanyDetailsDTO);
+    public ResponseEntity<Object> updateCompanyDetails(@RequestParam(value = "companyId") String companyId,
+                                                       @RequestBody CompanyDetailsDTO updateCompanyDetailsDTO){
+        companyService.updateCompanyDetails(companyId, updateCompanyDetailsDTO);
         return new ResponseEntity<>("Company details successfully updated!", HttpStatus.OK);
 
     }

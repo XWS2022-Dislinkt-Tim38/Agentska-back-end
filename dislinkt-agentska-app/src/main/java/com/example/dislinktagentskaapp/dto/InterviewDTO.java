@@ -8,8 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class InterviewDTO {
-
-    public String idUser;
     public int easyDifficultyCount;
     public int mediumDifficultyCount;
     public int hardDifficultyCount;
@@ -19,7 +17,6 @@ public class InterviewDTO {
     public InterviewDTO() {}
     public InterviewDTO(Interview interview){
 
-        this.idUser = interview.idUser;
         this.easyDifficultyCount = interview.easyDifficultyCount;
         this.mediumDifficultyCount = interview.mediumDifficultyCount;
         this.hardDifficultyCount = interview.hardDifficultyCount;

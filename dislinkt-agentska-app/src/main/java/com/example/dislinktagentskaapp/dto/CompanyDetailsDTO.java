@@ -6,11 +6,10 @@ import com.example.dislinktagentskaapp.model.CompanyDetails;
 import java.util.Date;
 import java.util.List;
 
-public class CompanyDetailsDTO {
-    public String companyId;
+public class CompanyDetailsDTO { ;
     public String name;
     public String city;
-    public String address;
+    public String country;
     public Date foundation;
     public String numberOfEmployees;
     public double rating;
@@ -22,10 +21,10 @@ public class CompanyDetailsDTO {
     public CompanyDetailsDTO() {}
 
     public CompanyDetailsDTO(CompanyDetails companyDetails) {
-        this.companyId = companyDetails.companyId;
+
         this.name = companyDetails.name;
         this.city = companyDetails.city;
-        this.address = companyDetails.address;
+        this.country = companyDetails.country;
         this.foundation = companyDetails.foundation;
         this.numberOfEmployees = companyDetails.numberOfEmployees;
         this.rating = companyDetails.rating;

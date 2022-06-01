@@ -15,6 +15,7 @@ public class OwnershipRequest {
     public OwnershipRequest() {}
 
     public OwnershipRequest(OwnershipRequestDTO ownershipRequestDTO){
+
         String id = java.util.UUID.randomUUID().toString();
         this.id = "request_" + id;
         this.idUser = ownershipRequestDTO.idUser;

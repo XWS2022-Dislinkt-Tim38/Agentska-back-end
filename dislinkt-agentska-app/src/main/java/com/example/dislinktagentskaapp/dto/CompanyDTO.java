@@ -19,6 +19,8 @@ public class CompanyDTO {
     public CompanyDTO(){}
 
     public CompanyDTO(Company company) {
+
+        this.id = company.id;
         this.idUser = company.idUser;
         this.companyDetails = company.companyDetails;
         this.commentsDTO = mapCommentsToDTO(company.comments);
