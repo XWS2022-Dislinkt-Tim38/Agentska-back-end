@@ -44,9 +44,7 @@ public class CompanyServiceImplementation implements CompanyService {
 
         Company companyToUpdate = companyRepository.findById(updateCompanyDTO.id)
                 .orElseThrow(CompanyNotFoundException::new);
-        companyToUpdate.name = updateCompanyDTO.name;
-        companyToUpdate.address = updateCompanyDTO.address;
-        companyToUpdate.comments = updateCompanyDTO.comments;
+        companyToUpdate.companyDetails = updateCompanyDTO.companyDetails;
         companyRepository.save(companyToUpdate);
 
     }
