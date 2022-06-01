@@ -15,7 +15,7 @@ public class CompanyDTO {
     public CompanyDTO(){}
     public CompanyDTO(Company company){
         this.id = company.id;
-        this.idUser = company.id;
+        this.idUser = company.idUser;
         this.name = company.name;
         this.address = company.address;
         this.comments = company.comments;
