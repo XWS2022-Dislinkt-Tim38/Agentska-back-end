@@ -12,7 +12,7 @@ public interface CommentService {
     boolean updateCompanyComment (String companyId, CommentDTO updateCommentDTO);
     boolean deleteCompanyComment(String companyId, String commentId);
 
-    CommentDTO addInterviewComment(String companyId,CommentDTO newCommentDTO);
+    CommentDTO addInterviewComment(String companyId,CommentDTO newCommentDTO, int difficulty);
     CommentDTO getInterviewComment(String companyId, String interviewId);
     List<CommentDTO> getAllInterviewComments(String interviewId);
     boolean updateInterviewComment (String companyId, CommentDTO updateCommentDTO);

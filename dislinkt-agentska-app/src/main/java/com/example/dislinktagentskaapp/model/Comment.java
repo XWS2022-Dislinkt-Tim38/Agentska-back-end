@@ -22,7 +22,7 @@ public class Comment {
         this.title = commentDTO.title;
         this.content = commentDTO.content;
         this.datePosted = new Date();
-        this.rating = 0.0;
+        this.rating = commentDTO.rating;
 
     }
 
