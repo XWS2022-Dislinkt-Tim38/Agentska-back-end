@@ -5,6 +5,7 @@ import com.example.dislinktagentskaapp.exception.RequestNotFoundException;
 import com.example.dislinktagentskaapp.model.OwnershipRequest;
 import com.example.dislinktagentskaapp.model.Role;
 import com.example.dislinktagentskaapp.repository.RequestRepository;
+import com.example.dislinktagentskaapp.service.CompanyService;
 import com.example.dislinktagentskaapp.service.RequestService;
 import com.example.dislinktagentskaapp.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,9 @@ public class RequestServiceImplementation implements RequestService {
 
     @Autowired
     UserService userService;
+
+    @Autowired
+    CompanyService companyService;
 
     @Override
     public OwnershipRequestDTO createRequest(OwnershipRequestDTO requestDTO) {
@@ -33,6 +37,7 @@ public class RequestServiceImplementation implements RequestService {
 
         if(requestResponse){
             userService.changeRole(request.idUser, Role.COMPANY_OWNER);
+            companyService.registerCompany(request.company);
             request.isAccepted = true;
             requestRepository.save(request);
             response = true;

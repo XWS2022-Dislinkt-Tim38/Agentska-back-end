@@ -13,5 +13,6 @@ public interface CompanyService {
     Company updateCompany(CompanyDTO editCompanyDTO);
     Company updateCompanyDetails(String companyId, CompanyDetailsDTO companyDetailsDTO);
     CompanyDTO getCompany(String companyId);
+    void registerCompany(Company company);
 
 }

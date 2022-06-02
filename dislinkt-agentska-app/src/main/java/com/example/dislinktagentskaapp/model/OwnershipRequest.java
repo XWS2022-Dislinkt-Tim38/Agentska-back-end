@@ -10,6 +10,7 @@ public class OwnershipRequest {
     @Id
     public String id;
     public String idUser;
+    public Company company;
     public boolean isAccepted;
 
     public OwnershipRequest() {}
@@ -19,6 +20,7 @@ public class OwnershipRequest {
         String id = java.util.UUID.randomUUID().toString();
         this.id = "request_" + id;
         this.idUser = ownershipRequestDTO.idUser;
+        this.company = new Company(ownershipRequestDTO.companyDTO);
         this.isAccepted = false;
     }
 }

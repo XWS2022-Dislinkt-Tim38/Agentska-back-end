@@ -72,4 +72,8 @@ public class CompanyServiceImplementation implements CompanyService {
         }
         return companyToSend;
     }
+
+    public void registerCompany(Company company){
+        companyRepository.save(company);
+    }
 }
