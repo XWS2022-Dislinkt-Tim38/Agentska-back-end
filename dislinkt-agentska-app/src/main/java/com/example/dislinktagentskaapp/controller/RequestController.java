@@ -30,10 +30,6 @@ public class RequestController {
     public  ResponseEntity<Object> manageRequest(@RequestParam(value = "id") String id,
                                                  @RequestParam(value = "requestResponse") boolean requestResponse){
         boolean response = requestService.manageRequest(id, requestResponse);
-        if(response)
-            return new ResponseEntity<>("Request accepted!", HttpStatus.OK);
-        else
-            return new ResponseEntity<>("Request denied!", HttpStatus.OK);
-
+        return new ResponseEntity<>(response, HttpStatus.OK);
     }
 }

@@ -38,9 +38,12 @@ public class RequestServiceImplementation implements RequestService {
         if(requestResponse){
             userService.changeRole(request.idUser, Role.COMPANY_OWNER);
             companyService.registerCompany(request.company);
-            request.isAccepted = true;
+            request.status = "APPROVED";
             requestRepository.save(request);
             response = true;
+        } else {
+            request.status = "DENIED";
+            requestRepository.save(request);
         }
         return response;
     }

@@ -11,7 +11,7 @@ public class OwnershipRequest {
     public String id;
     public String idUser;
     public Company company;
-    public boolean isAccepted;
+    public String status;
 
     public OwnershipRequest() {}
 
@@ -21,6 +21,6 @@ public class OwnershipRequest {
         this.id = "request_" + id;
         this.idUser = ownershipRequestDTO.idUser;
         this.company = new Company(ownershipRequestDTO.companyDTO);
-        this.isAccepted = false;
+        this.status = "PENDING";
     }
 }
