@@ -39,7 +39,7 @@ public class CommentController {
     }
 
     @PutMapping(value = "/companycomment/{companyId}")
-    public ResponseEntity<Object> getAllCompanyComments(@PathVariable String companyId,
+    public ResponseEntity<Object> updateCompanyComment(@PathVariable String companyId,
                                                         @RequestBody CommentDTO updateCommentDTO){
         boolean response = commentService.updateCompanyComment(companyId, updateCommentDTO);
         return new ResponseEntity<>(response, HttpStatus.OK);
