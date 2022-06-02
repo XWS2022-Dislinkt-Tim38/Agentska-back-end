@@ -39,7 +39,7 @@ public class CompanyServiceImplementation implements CompanyService {
     }
 
     @Override
-    public void updateCompany(CompanyDTO updateCompanyDTO) {
+    public Company updateCompany(CompanyDTO updateCompanyDTO) {
 
         if(!companyRepository.existsById(updateCompanyDTO.id))
             throw new CompanyNotFoundException();
@@ -48,14 +48,28 @@ public class CompanyServiceImplementation implements CompanyService {
                 .orElseThrow(CompanyNotFoundException::new);
         companyToUpdate.companyDetails = updateCompanyDTO.companyDetails;
         companyRepository.save(companyToUpdate);
-
+        return companyToUpdate;
     }
 
     @Override
-    public void updateCompanyDetails(String companyId, CompanyDetailsDTO companyDetailsDTO) {
+    public Company updateCompanyDetails(String companyId, CompanyDetailsDTO companyDetailsDTO) {
         Company companyToUpdate = companyRepository.findById(companyId)
                 .orElseThrow(CompanyNotFoundException::new);
         companyToUpdate.companyDetails = new CompanyDetails(companyDetailsDTO);
         companyRepository.save(companyToUpdate);
+        return companyToUpdate;
+    }
+
+    @Override
+    public CompanyDTO getCompany(String companyId) {
+        List<Company> companies = companyRepository.findAll();
+        CompanyDTO companyToSend = new CompanyDTO();
+        List<CompanyDTO> companiesDTO = new ArrayList<>();
+        for(Company company : companies){
+            if(company.id.equals(companyId)){
+                companyToSend = new CompanyDTO(company);
+            }
+        }
+        return companyToSend;
     }
 }

@@ -2,6 +2,7 @@ package com.example.dislinktagentskaapp.controller;
 
 import com.example.dislinktagentskaapp.dto.CompanyDTO;
 import com.example.dislinktagentskaapp.dto.CompanyDetailsDTO;
+import com.example.dislinktagentskaapp.model.Company;
 import com.example.dislinktagentskaapp.service.CompanyService;
 import com.example.dislinktagentskaapp.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,16 +39,21 @@ public class CompanyController {
 
     @PutMapping
     public ResponseEntity<Object> updateCompany(@RequestBody CompanyDTO updateCompanyDTO){
-        companyService.updateCompany(updateCompanyDTO);
-        return new ResponseEntity<>("Company successfully updated!", HttpStatus.OK);
+        Company company = companyService.updateCompany(updateCompanyDTO);
+        return new ResponseEntity<>(company, HttpStatus.OK);
 
     }
 
     @PutMapping(value = "/details")
     public ResponseEntity<Object> updateCompanyDetails(@RequestParam(value = "companyId") String companyId,
                                                        @RequestBody CompanyDetailsDTO updateCompanyDetailsDTO){
-        companyService.updateCompanyDetails(companyId, updateCompanyDetailsDTO);
-        return new ResponseEntity<>("Company details successfully updated!", HttpStatus.OK);
+        Company company  = companyService.updateCompanyDetails(companyId, updateCompanyDetailsDTO);
+        return new ResponseEntity<>(company, HttpStatus.OK);
+    }
 
+    @GetMapping(value = "/{id}")
+    public ResponseEntity<CompanyDTO> getCompany(@PathVariable String id){
+        CompanyDTO companyDTO = companyService.getCompany(id);
+        return new ResponseEntity<>(companyDTO, HttpStatus.OK);
     }
 }
