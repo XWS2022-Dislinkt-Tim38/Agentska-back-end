@@ -2,7 +2,6 @@ package com.example.dislinktagentskaapp.dto;
 
 import com.example.dislinktagentskaapp.model.*;
 
-import java.sql.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,7 +13,7 @@ public class CompanyDTO {
     public List<CommentDTO> commentsDTO;
     public InterviewDTO interviewDTO;
     public List<SalaryDTO> salariesDTO;
-    public List<JobOfferDTO> jobOffersDTO;
+    public List<OfferDTO> jobOffersDTO;
 
     public CompanyDTO(){}
 
@@ -26,7 +25,7 @@ public class CompanyDTO {
         this.commentsDTO = mapCommentsToDTO(company.comments);
         this.salariesDTO = mapSalariesToDTO(company.salaries);
         this.interviewDTO = new InterviewDTO(company.interview);
-        this.jobOffersDTO = mapJobOffersToDTO(company.jobOffers);
+        this.jobOffersDTO = mapJobOffersToDTO(company.offers);
     }
 
     private List<CommentDTO> mapCommentsToDTO(List<Comment> comments){
@@ -45,10 +44,10 @@ public class CompanyDTO {
         return salariesDTO;
     }
 
-    private List<JobOfferDTO> mapJobOffersToDTO(List<JobOffer> jobOffers){
-        List<JobOfferDTO> jobOFfersDTO = new ArrayList<>();
-        for(JobOffer jobOffer : jobOffers)
-            jobOFfersDTO.add(new JobOfferDTO(jobOffer));
+    private List<OfferDTO> mapJobOffersToDTO(List<Offer> jobOffers){
+        List<OfferDTO> jobOFfersDTO = new ArrayList<>();
+        for(Offer jobOffer : jobOffers)
+            jobOFfersDTO.add(new OfferDTO(jobOffer));
 
         return jobOFfersDTO;
     }

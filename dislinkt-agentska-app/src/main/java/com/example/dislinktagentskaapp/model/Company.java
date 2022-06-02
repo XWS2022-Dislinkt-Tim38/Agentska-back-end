@@ -1,6 +1,5 @@
 package com.example.dislinktagentskaapp.model;
 
-import com.example.dislinktagentskaapp.dto.CommentDTO;
 import com.example.dislinktagentskaapp.dto.CompanyDTO;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -17,18 +16,18 @@ public class Company {
     public List<Comment> comments;
     public Interview interview;
     public List<Salary> salaries;
-    public List<JobOffer> jobOffers;
+    public List<Offer> offers;
 
     public Company() {}
     public Company(CompanyDTO companyDTO){
 
-        this.id = java.util.UUID.randomUUID().toString();
+        this.id = "company_" + java.util.UUID.randomUUID().toString();
         this.idUser = companyDTO.idUser;
         this.companyDetails = companyDTO.companyDetails;
         this.comments = new ArrayList<>();
         this.interview = new Interview();
         this.salaries = new ArrayList<>();
-        this.jobOffers = new ArrayList<>();
+        this.offers = new ArrayList<>();
 
     }
 }

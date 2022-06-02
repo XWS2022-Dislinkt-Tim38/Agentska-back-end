@@ -17,7 +17,7 @@ public class Comment {
 
     public Comment(CommentDTO commentDTO){
 
-        this.id = java.util.UUID.randomUUID().toString();
+        this.id = "comment_" + java.util.UUID.randomUUID().toString();
         this.idUser = commentDTO.idUser;
         this.title = commentDTO.title;
         this.content = commentDTO.content;
