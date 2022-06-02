@@ -7,9 +7,9 @@ public class SalaryDTO {
     public String id;
     public String idUser;
     public String position;
-    public String nettoSalary;
-    public int min;
-    public int max;
+    public double nettoSalary;
+    public double min;
+    public double max;
 
     public SalaryDTO() {}
 
