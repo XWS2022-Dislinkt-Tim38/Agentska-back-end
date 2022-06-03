@@ -1,5 +1,6 @@
 package com.example.dislinktagentskaapp.controller;
 
+import com.example.dislinktagentskaapp.dto.LinkRequestDTO;
 import com.example.dislinktagentskaapp.dto.UserDTO;
 import com.example.dislinktagentskaapp.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +12,7 @@ import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.List;
 
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:4201")
 @RestController
 @RequestMapping(value = "/user")
 public class UserController {
@@ -60,9 +61,10 @@ public class UserController {
         return new ResponseEntity<>("User successfully deleted!", HttpStatus.OK);
     }
 
-    @PutMapping(value = "/key/{idUser}")
-    public ResponseEntity<Object> setKey(@PathVariable String idUser){
-        UserDTO user = userService.setKey(idUser);
+    @CrossOrigin(origins = "http://localhost:4201")
+    @PutMapping(value = "/key")
+    public ResponseEntity<Object> setKey(@RequestBody LinkRequestDTO linkRequestDTO){
+        UserDTO user = userService.setKey(linkRequestDTO);
         return new ResponseEntity<>(user, HttpStatus.OK);
     }
 

@@ -1,10 +1,9 @@
 package com.example.dislinktagentskaapp.service.implementation;
 
-import com.example.dislinktagentskaapp.dto.CompanyDTO;
+import com.example.dislinktagentskaapp.dto.LinkRequestDTO;
 import com.example.dislinktagentskaapp.dto.UserDTO;
 import com.example.dislinktagentskaapp.exception.UserNotFoundException;
 import com.example.dislinktagentskaapp.exception.UsernameExistsException;
-import com.example.dislinktagentskaapp.model.Company;
 import com.example.dislinktagentskaapp.model.Role;
 import com.example.dislinktagentskaapp.model.User;
 import com.example.dislinktagentskaapp.repository.UserRepository;
@@ -98,9 +97,9 @@ public class UserServiceImplementation implements UserService {
     }
 
     @Override
-    public UserDTO setKey(String idUser) {
-        User user = userRepository.findById(idUser).orElseThrow(UserNotFoundException::new);
-        user.key = java.util.UUID.randomUUID().toString();
+    public UserDTO setKey(LinkRequestDTO linkRequestDTO) {
+        User user = userRepository.findById(linkRequestDTO.userId).orElseThrow(UserNotFoundException::new);
+        user.key = linkRequestDTO.keyValue;
         userRepository.save(user);
         return new UserDTO(user);
     }
