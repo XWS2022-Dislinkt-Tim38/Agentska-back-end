@@ -12,6 +12,5 @@ public interface OfferService {
     List<OfferDTO> getAllOffers();
     boolean updateOffer (String companyId, OfferDTO updateOfferDTO);
     boolean deleteOffer(String companyId, String offerId);
-
-    //TODO: Podeli ponudu s dislinktom
+    boolean setSharedFlag(String companyId, String offerId);
 }

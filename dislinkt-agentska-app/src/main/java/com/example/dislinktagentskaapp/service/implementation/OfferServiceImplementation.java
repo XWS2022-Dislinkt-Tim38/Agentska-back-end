@@ -83,6 +83,7 @@ public class OfferServiceImplementation implements OfferService {
                 offer.publishDate = updateOfferDTO.publishDate;
                 offer.deadlineDate = updateOfferDTO.deadlineDate;
                 offer.city = updateOfferDTO.city;
+                offer.isShared = updateOfferDTO.isShared;
                 companyRepository.save(company);
                 response = true;
                 break;
@@ -95,6 +96,21 @@ public class OfferServiceImplementation implements OfferService {
         Company company = companyRepository.findById(companyId)
                 .orElseThrow(CompanyNotFoundException::new);
         boolean response = company.offers.removeIf(offer -> offer.id.equals(offerId));
+        companyRepository.save(company);
+        return response;
+    }
+
+    @Override
+    public boolean setSharedFlag(String companyId, String offerId) {
+        boolean response = false;
+        Company company = companyRepository.findById(companyId)
+                .orElseThrow(CompanyNotFoundException::new);
+        for(Offer offer : company.offers)
+            if(offer.id.equals(offerId)){
+                offer.isShared = true;
+                response = true;
+                break;
+            }
         companyRepository.save(company);
         return response;
     }

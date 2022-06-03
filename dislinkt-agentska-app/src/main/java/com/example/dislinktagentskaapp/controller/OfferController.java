@@ -56,4 +56,11 @@ public class OfferController {
         boolean response = offerService.deleteOffer(companyId, offerId);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
+
+    @PutMapping(value = "/sharing/{companyId}/{offerId}")
+    public ResponseEntity<Object> updateOffer(@PathVariable String companyId,
+                                              @PathVariable String offerId){
+        boolean response = offerService.setSharedFlag(companyId, offerId);
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
 }

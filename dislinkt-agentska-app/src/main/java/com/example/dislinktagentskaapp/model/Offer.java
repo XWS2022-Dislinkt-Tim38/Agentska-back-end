@@ -20,6 +20,7 @@ public class Offer {
     public Date publishDate;
     public Date deadlineDate;
     public String city;
+    public boolean isShared;
 
     public Offer() {}
 
@@ -38,5 +39,6 @@ public class Offer {
         this.publishDate = new Date();
         this.deadlineDate = offerDTO.deadlineDate;
         this.city = offerDTO.city;
+        this.isShared = false;
     }
 }
