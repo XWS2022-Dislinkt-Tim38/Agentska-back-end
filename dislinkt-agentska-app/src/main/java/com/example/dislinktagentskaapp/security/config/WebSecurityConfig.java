@@ -50,6 +50,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private TokenUtils tokenUtils;
 
+    //TODO: Dodati hasAuthority za kompaniju -> User (komentari, intervju, plate, ocena), Owner -> Kreiranje, izmena
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
@@ -77,18 +78,25 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     //Ignoring postavljen na vecinu radi testiranja samo
     @Override
     public void configure(WebSecurity web) throws Exception {
+        //TODO: Obrisati ignoring za odredjene metode kad se doda autorizacija
         web.ignoring().antMatchers(HttpMethod.POST, "/**");
         web.ignoring().antMatchers(HttpMethod.POST, "/request");
-        web.ignoring().antMatchers(HttpMethod.PUT, "/request");
         web.ignoring().antMatchers(HttpMethod.POST, "/company");
-        web.ignoring().antMatchers(HttpMethod.PUT, "/company");
-        web.ignoring().antMatchers(HttpMethod.GET, "/company");
         web.ignoring().antMatchers(HttpMethod.POST, "/auth/login");
+        web.ignoring().antMatchers(HttpMethod.PUT, "/request/**");
+        web.ignoring().antMatchers(HttpMethod.PUT, "/request");
+        web.ignoring().antMatchers(HttpMethod.PUT, "/**");
+        web.ignoring().antMatchers(HttpMethod.PUT, "/company");
+        web.ignoring().antMatchers(HttpMethod.DELETE, "/**");
+        web.ignoring().antMatchers(HttpMethod.GET, "/request");
+        web.ignoring().antMatchers(HttpMethod.GET, "/request/**");
+        web.ignoring().antMatchers(HttpMethod.GET, "/company/**");
+        web.ignoring().antMatchers(HttpMethod.GET, "/comment/**");
+        web.ignoring().antMatchers(HttpMethod.GET, "/salary/**");
+        web.ignoring().antMatchers(HttpMethod.GET, "/offer/**");
         web.ignoring().antMatchers(HttpMethod.GET, "/user/{id}");
         web.ignoring().antMatchers(HttpMethod.GET, "/user");
         web.ignoring().antMatchers(HttpMethod.GET, "/user/test");
-        web.ignoring().antMatchers(HttpMethod.PUT, "/**");
-        web.ignoring().antMatchers(HttpMethod.DELETE, "/**");
         web.ignoring().antMatchers(HttpMethod.GET, "/token/**");
         web.ignoring().antMatchers(HttpMethod.GET, "/", "/webjars/**", "/*.html", "favicon.ico", "/**/*.html",
                 "/**/*.css", "/**/*.js");

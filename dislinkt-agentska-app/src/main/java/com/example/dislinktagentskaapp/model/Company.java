@@ -12,17 +12,22 @@ public class Company {
     @Id
     public String id;
     public String idUser;
-    public String name;
-    public String address;
-    public List<String> comments;
+    public CompanyDetails companyDetails;
+    public List<Comment> comments;
+    public Interview interview;
+    public List<Salary> salaries;
+    public List<Offer> offers;
 
     public Company() {}
     public Company(CompanyDTO companyDTO){
-        this.id = java.util.UUID.randomUUID().toString();
-        this.idUser = companyDTO.idUser;
-        this.name = companyDTO.name;
-        this.address = companyDTO.address;
-        this.comments = new ArrayList<>();
-    }
 
+        this.id = "company_" + java.util.UUID.randomUUID().toString();
+        this.idUser = companyDTO.idUser;
+        this.companyDetails = companyDTO.companyDetails;
+        this.comments = new ArrayList<>();
+        this.interview = new Interview();
+        this.salaries = new ArrayList<>();
+        this.offers = new ArrayList<>();
+
+    }
 }

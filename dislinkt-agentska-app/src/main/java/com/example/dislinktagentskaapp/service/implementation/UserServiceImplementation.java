@@ -97,4 +97,12 @@ public class UserServiceImplementation implements UserService {
         userRepository.save(user);
     }
 
+    @Override
+    public UserDTO setKey(String idUser) {
+        User user = userRepository.findById(idUser).orElseThrow(UserNotFoundException::new);
+        user.key = java.util.UUID.randomUUID().toString();
+        userRepository.save(user);
+        return new UserDTO(user);
+    }
+
 }

@@ -10,14 +10,17 @@ public class OwnershipRequest {
     @Id
     public String id;
     public String idUser;
-    public boolean isAccepted;
+    public Company company;
+    public String status;
 
     public OwnershipRequest() {}
 
     public OwnershipRequest(OwnershipRequestDTO ownershipRequestDTO){
+
         String id = java.util.UUID.randomUUID().toString();
         this.id = "request_" + id;
         this.idUser = ownershipRequestDTO.idUser;
-        this.isAccepted = false;
+        this.company = new Company(ownershipRequestDTO.companyDTO);
+        this.status = "PENDING";
     }
 }

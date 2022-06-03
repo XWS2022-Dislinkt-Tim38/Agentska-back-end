@@ -60,4 +60,10 @@ public class UserController {
         return new ResponseEntity<>("User successfully deleted!", HttpStatus.OK);
     }
 
+    @PutMapping(value = "/key/{idUser}")
+    public ResponseEntity<Object> setKey(@PathVariable String idUser){
+        UserDTO user = userService.setKey(idUser);
+        return new ResponseEntity<>(user, HttpStatus.OK);
+    }
+
 }

@@ -1,0 +1,25 @@
+package com.example.dislinktagentskaapp.dto;
+
+import com.example.dislinktagentskaapp.model.Salary;
+
+public class SalaryDTO {
+
+    public String id;
+    public String idUser;
+    public String position;
+    public double nettoSalary;
+    public double min;
+    public double max;
+
+    public SalaryDTO() {}
+
+    public SalaryDTO(Salary salary){
+
+        this.id = salary.id;
+        this.idUser = salary.idUser;
+        this.position = salary.position;
+        this.nettoSalary = salary.nettoSalary;
+        this.min = salary.min;
+        this.max = salary.max;
+    }
+}

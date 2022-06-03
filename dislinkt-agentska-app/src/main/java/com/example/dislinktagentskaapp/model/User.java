@@ -55,13 +55,12 @@ public class User {
     public User(UserDTO userDTO){
 
         String id = java.util.UUID.randomUUID().toString();
-        String key = java.util.UUID.randomUUID().toString();
         this.id = "user_" + id;
         this.firstName = userDTO.firstName;
         this.lastName = userDTO.lastName;
         this.username = userDTO.username;
         this.password = userDTO.password;
-        this.key = key;
+        this.key = "";
         this.email = userDTO.email;
         this.address = userDTO.address;
         this.phoneNumber = userDTO.phoneNumber;
