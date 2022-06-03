@@ -20,6 +20,7 @@ public class CommentDTO {
 
         this.id = comment.id;
         this.idUser = comment.idUser;
+        this.username = comment.username;
         this.title = comment.title;
         this.content = comment.content;
         this.datePosted = comment.datePosted;
