@@ -1,6 +1,5 @@
 package com.example.dislinktagentskaapp.controller;
 
-import com.example.dislinktagentskaapp.dto.CommentDTO;
 import com.example.dislinktagentskaapp.dto.OfferDTO;
 import com.example.dislinktagentskaapp.service.OfferService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,8 +32,14 @@ public class OfferController {
     }
 
     @GetMapping(value = "/{companyId}")
-    public ResponseEntity<List<OfferDTO>> getAllOffers(@PathVariable String companyId){
-        List<OfferDTO> offers = offerService.getAllOffers(companyId);
+    public ResponseEntity<List<OfferDTO>> getAllOffersByCompany(@PathVariable String companyId){
+        List<OfferDTO> offers = offerService.getAllOffersByCompany(companyId);
+        return new ResponseEntity<>(offers, HttpStatus.OK);
+    }
+
+    @GetMapping
+    public ResponseEntity<List<OfferDTO>> getAllOffers(){
+        List<OfferDTO> offers = offerService.getAllOffers();
         return new ResponseEntity<>(offers, HttpStatus.OK);
     }
 

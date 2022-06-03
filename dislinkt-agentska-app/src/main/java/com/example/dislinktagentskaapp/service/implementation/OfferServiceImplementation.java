@@ -43,7 +43,7 @@ public class OfferServiceImplementation implements OfferService {
     }
 
     @Override
-    public List<OfferDTO> getAllOffers(String companyId) {
+    public List<OfferDTO> getAllOffersByCompany(String companyId) {
         Company company = companyRepository.findById(companyId)
                 .orElseThrow(CompanyNotFoundException::new);
         List<OfferDTO> offersDTO = new ArrayList<>();
@@ -51,6 +51,17 @@ public class OfferServiceImplementation implements OfferService {
             offersDTO.add(new OfferDTO(offer));
 
         return offersDTO;
+    }
+
+    @Override
+    public List<OfferDTO> getAllOffers() {
+        List<Company> companies = companyRepository.findAll();
+        List<OfferDTO> offers = new ArrayList<>();
+        for(Company company : companies)
+            for(Offer offer : company.offers)
+                offers.add(new OfferDTO(offer));
+
+        return offers;
     }
 
     @Override
