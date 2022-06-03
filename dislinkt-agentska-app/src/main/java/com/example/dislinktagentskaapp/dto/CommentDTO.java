@@ -8,6 +8,7 @@ public class CommentDTO {
 
     public String id;
     public String idUser;
+    public String username;
     public String title;
     public String content;
     public Date datePosted;

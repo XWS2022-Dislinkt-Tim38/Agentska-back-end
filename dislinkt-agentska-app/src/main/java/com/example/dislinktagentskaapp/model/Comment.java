@@ -8,6 +8,7 @@ public class Comment {
 
     public String id;
     public String idUser;
+    public String username;
     public String title;
     public String content;
     public Date datePosted;
@@ -19,6 +20,7 @@ public class Comment {
 
         this.id = "comment_" + java.util.UUID.randomUUID().toString();
         this.idUser = commentDTO.idUser;
+        this.username = commentDTO.username;
         this.title = commentDTO.title;
         this.content = commentDTO.content;
         this.datePosted = new Date();
