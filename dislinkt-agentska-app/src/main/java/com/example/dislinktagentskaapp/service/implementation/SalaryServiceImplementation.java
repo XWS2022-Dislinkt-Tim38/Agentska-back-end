@@ -1,12 +1,14 @@
 package com.example.dislinktagentskaapp.service.implementation;
 
 import com.example.dislinktagentskaapp.dto.SalaryDTO;
+import com.example.dislinktagentskaapp.dto.SalaryNewDTO;
 import com.example.dislinktagentskaapp.exception.CompanyNotFoundException;
 import com.example.dislinktagentskaapp.model.Company;
 import com.example.dislinktagentskaapp.model.Salary;
 import com.example.dislinktagentskaapp.repository.CompanyRepository;
 import com.example.dislinktagentskaapp.service.SalaryService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.parameters.P;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -109,5 +111,61 @@ public class SalaryServiceImplementation implements SalaryService {
         updateMinMaxSalary(company);
         companyRepository.save(company);
         return response;
+    }
+
+    @Override
+    public List<SalaryNewDTO> getUniqueSalaries(String companyId) {
+
+        List<SalaryDTO> salariesDTO = new ArrayList<>();
+        salariesDTO = getAllCompanySalaries(companyId);
+        List<String> salaryPositions = new ArrayList<>();
+        List<String> newSalaryPosition = new ArrayList<>();
+
+        for (SalaryDTO salaryDTO : salariesDTO) {
+            salaryPositions.add(salaryDTO.position);
+        }
+
+        for (String position : salaryPositions) {
+            if (!newSalaryPosition.contains(position)) {
+                newSalaryPosition.add(position);
+            }
+        }
+
+        List<SalaryNewDTO> filteredSalaries = new ArrayList<>();
+        
+        for (String position : newSalaryPosition) {
+            double averageSalary = 0;
+            double min = Double.POSITIVE_INFINITY;
+            double max = Double.NEGATIVE_INFINITY;
+            double sum = 0;
+            int counter = 0;
+
+            for (SalaryDTO salaryDTO : salariesDTO){
+                if(position.equals(salaryDTO.position)){
+                    sum += salaryDTO.nettoSalary;
+                    counter++;
+
+                    if(min > salaryDTO.nettoSalary){
+                        min = salaryDTO.nettoSalary;
+                    }
+                    if(max < salaryDTO.nettoSalary){
+                        max = salaryDTO.nettoSalary;
+                    }
+                }
+            }
+            averageSalary = sum/counter;
+
+            SalaryNewDTO salaryNewDTO = new SalaryNewDTO();
+            salaryNewDTO.position = position;
+            salaryNewDTO.averageSalary = averageSalary;
+            salaryNewDTO.salaryCount = counter;
+            salaryNewDTO.max = max;
+            salaryNewDTO.min = min;
+
+            filteredSalaries.add(salaryNewDTO);
+
+        }
+
+        return filteredSalaries;
     }
 }

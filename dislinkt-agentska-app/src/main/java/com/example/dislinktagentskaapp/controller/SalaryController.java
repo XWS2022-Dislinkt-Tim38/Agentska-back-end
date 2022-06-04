@@ -1,6 +1,7 @@
 package com.example.dislinktagentskaapp.controller;
 
 import com.example.dislinktagentskaapp.dto.SalaryDTO;
+import com.example.dislinktagentskaapp.dto.SalaryNewDTO;
 import com.example.dislinktagentskaapp.service.SalaryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -50,4 +51,11 @@ public class SalaryController {
         boolean response = salaryService.deleteCompanySalary(companyId, salaryId);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
+
+    @GetMapping(value = "/companysalary/unique/{companyId}")
+    public ResponseEntity<List<SalaryNewDTO>> getUniqueSalaries(@PathVariable String companyId){
+        List<SalaryNewDTO> salaries = salaryService.getUniqueSalaries(companyId);
+        return new ResponseEntity<>(salaries, HttpStatus.OK);
+    }
+
 }

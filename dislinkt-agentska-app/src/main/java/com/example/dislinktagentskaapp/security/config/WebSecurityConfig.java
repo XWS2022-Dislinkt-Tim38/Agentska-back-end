@@ -82,6 +82,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         web.ignoring().antMatchers(HttpMethod.POST, "/**");
         web.ignoring().antMatchers(HttpMethod.POST, "/request");
         web.ignoring().antMatchers(HttpMethod.POST, "/company");
+        web.ignoring().antMatchers(HttpMethod.POST, "/offer");
         web.ignoring().antMatchers(HttpMethod.POST, "/auth/login");
         web.ignoring().antMatchers(HttpMethod.PUT, "/request/**");
         web.ignoring().antMatchers(HttpMethod.PUT, "/request");
@@ -96,6 +97,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         web.ignoring().antMatchers(HttpMethod.GET, "/offer/**");
         web.ignoring().antMatchers(HttpMethod.GET, "/user/{id}");
         web.ignoring().antMatchers(HttpMethod.GET, "/user");
+        web.ignoring().antMatchers(HttpMethod.GET, "/user/**");
+        web.ignoring().antMatchers(HttpMethod.GET, "/user/username/{id}");
         web.ignoring().antMatchers(HttpMethod.GET, "/user/test");
         web.ignoring().antMatchers(HttpMethod.GET, "/token/**");
         web.ignoring().antMatchers(HttpMethod.GET, "/", "/webjars/**", "/*.html", "favicon.ico", "/**/*.html",
