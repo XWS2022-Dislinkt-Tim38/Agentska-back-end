@@ -76,4 +76,9 @@ public class CompanyServiceImplementation implements CompanyService {
     public void registerCompany(Company company){
         companyRepository.save(company);
     }
+
+    @Override
+    public CompanyDTO getCompanyByOwner(String ownerId) {
+        return new CompanyDTO(companyRepository.findCompanyByidUser(ownerId));
+    }
 }

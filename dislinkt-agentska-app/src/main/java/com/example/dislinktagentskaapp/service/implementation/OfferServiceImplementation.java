@@ -114,4 +114,16 @@ public class OfferServiceImplementation implements OfferService {
         companyRepository.save(company);
         return response;
     }
+
+    @Override
+    public List<OfferDTO> getAllOffersByUser(String idUSer) {
+        List<OfferDTO> allOffers = getAllOffers();
+        List<OfferDTO> offers = new ArrayList<>();
+
+        for(OfferDTO offer : allOffers)
+            if(offer.idUser.equals(idUSer))
+                offers.add(offer);
+
+        return offers;
+    }
 }

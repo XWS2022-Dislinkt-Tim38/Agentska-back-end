@@ -6,5 +6,6 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 
 public interface CompanyRepository extends MongoRepository<Company, String> {
 
-    public Comment findCompanyCommentById(final String name);
+    Comment findCompanyCommentById(final String name);
+    Company findCompanyByidUser(String idUser);
 }

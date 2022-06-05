@@ -13,4 +13,6 @@ public interface OfferService {
     boolean updateOffer (String companyId, OfferDTO updateOfferDTO);
     boolean deleteOffer(String companyId, String offerId);
     boolean setSharedFlag(String companyId, String offerId);
+
+    List<OfferDTO> getAllOffersByUser(String idUSer);
 }

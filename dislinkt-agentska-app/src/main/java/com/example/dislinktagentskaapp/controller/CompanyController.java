@@ -56,4 +56,10 @@ public class CompanyController {
         CompanyDTO companyDTO = companyService.getCompany(id);
         return new ResponseEntity<>(companyDTO, HttpStatus.OK);
     }
+
+    @GetMapping(value = "/user/{idOwner}")
+    public ResponseEntity<CompanyDTO> getCompanyByOwner(@PathVariable String idOwner){
+        CompanyDTO companyDTO = companyService.getCompanyByOwner(idOwner);
+        return new ResponseEntity<>(companyDTO, HttpStatus.OK);
+    }
 }

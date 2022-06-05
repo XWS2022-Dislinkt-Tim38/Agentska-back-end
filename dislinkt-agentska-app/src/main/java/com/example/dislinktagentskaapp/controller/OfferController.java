@@ -37,6 +37,12 @@ public class OfferController {
         return new ResponseEntity<>(offers, HttpStatus.OK);
     }
 
+    @GetMapping(value = "/user/{userId}")
+    public ResponseEntity<List<OfferDTO>> getAllOffersByUser(@PathVariable String userId){
+        List<OfferDTO> offers = offerService.getAllOffersByUser(userId);
+        return new ResponseEntity<>(offers, HttpStatus.OK);
+    }
+
     @GetMapping
     public ResponseEntity<List<OfferDTO>> getAllOffers(){
         List<OfferDTO> offers = offerService.getAllOffers();

@@ -14,5 +14,6 @@ public interface CompanyService {
     Company updateCompanyDetails(String companyId, CompanyDetailsDTO companyDetailsDTO);
     CompanyDTO getCompany(String companyId);
     void registerCompany(Company company);
+    CompanyDTO getCompanyByOwner(String ownerId);
 
 }
