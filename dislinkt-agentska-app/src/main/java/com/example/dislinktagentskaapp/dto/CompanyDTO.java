@@ -10,10 +10,10 @@ public class CompanyDTO {
     public String id;
     public String idUser;
     public CompanyDetails companyDetails;
-    public List<CommentDTO> commentsDTO;
-    public InterviewDTO interviewDTO;
-    public List<SalaryDTO> salariesDTO;
-    public List<OfferDTO> jobOffersDTO;
+    public List<CommentDTO> comments;
+    public InterviewDTO interview;
+    public List<SalaryDTO> salaries;
+    public List<OfferDTO> offers;
 
     public CompanyDTO(){}
 
@@ -22,10 +22,10 @@ public class CompanyDTO {
         this.id = company.id;
         this.idUser = company.idUser;
         this.companyDetails = company.companyDetails;
-        this.commentsDTO = mapCommentsToDTO(company.comments);
-        this.salariesDTO = mapSalariesToDTO(company.salaries);
-        this.interviewDTO = new InterviewDTO(company.interview);
-        this.jobOffersDTO = mapJobOffersToDTO(company.offers);
+        this.comments = mapCommentsToDTO(company.comments);
+        this.salaries = mapSalariesToDTO(company.salaries);
+        this.interview = new InterviewDTO(company.interview);
+        this.offers = mapJobOffersToDTO(company.offers);
     }
 
     private List<CommentDTO> mapCommentsToDTO(List<Comment> comments){
