@@ -1,6 +1,7 @@
 package com.example.dislinktagentskaapp.service;
 
 import com.example.dislinktagentskaapp.dto.CommentDTO;
+import com.example.dislinktagentskaapp.dto.InterviewDTO;
 
 import java.util.List;
 
@@ -17,5 +18,6 @@ public interface CommentService {
     List<CommentDTO> getAllInterviewComments(String interviewId);
     boolean updateInterviewComment (String companyId, CommentDTO updateCommentDTO);
     boolean deleteInterviewComment(String companyId, String commentId);
+    InterviewDTO getInterview(String companyId);
 
 }

@@ -1,6 +1,7 @@
 package com.example.dislinktagentskaapp.service.implementation;
 
 import com.example.dislinktagentskaapp.dto.CommentDTO;
+import com.example.dislinktagentskaapp.dto.InterviewDTO;
 import com.example.dislinktagentskaapp.exception.CompanyNotFoundException;
 import com.example.dislinktagentskaapp.model.Comment;
 import com.example.dislinktagentskaapp.model.Company;
@@ -190,5 +191,14 @@ public class CommentServiceImplementation implements CommentService {
         updateInterviewRating(company);
         companyRepository.save(company);
         return response;
+    }
+
+    @Override
+    public InterviewDTO getInterview(String companyId) {
+        Company company = companyRepository.findById(companyId)
+                .orElseThrow(CompanyNotFoundException::new);
+        InterviewDTO interviewdto = new InterviewDTO(company.interview);
+
+        return interviewdto;
     }
 }

@@ -1,6 +1,7 @@
 package com.example.dislinktagentskaapp.controller;
 
 import com.example.dislinktagentskaapp.dto.CommentDTO;
+import com.example.dislinktagentskaapp.dto.InterviewDTO;
 import com.example.dislinktagentskaapp.service.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -65,6 +66,13 @@ public class CommentController {
         CommentDTO comment = commentService.getInterviewComment(companyId, commentId);
         return new ResponseEntity<>(comment, HttpStatus.OK);
     }
+
+    @GetMapping(value = "/interview/{companyId}")
+    public ResponseEntity<Object> getInterview(@PathVariable String companyId){
+        InterviewDTO interviewDTO = commentService.getInterview(companyId);
+        return new ResponseEntity<>(interviewDTO, HttpStatus.OK);
+    }
+
 
     @GetMapping(value = "/interviewcomment/{companyId}")
     public ResponseEntity<List<CommentDTO>> getAllInterviewComments(@PathVariable String companyId){
