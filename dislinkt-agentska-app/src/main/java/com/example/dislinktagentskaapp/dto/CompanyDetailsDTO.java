@@ -15,6 +15,8 @@ public class CompanyDetailsDTO { ;
     public double rating;
     public String website;
     public String industry;
+    public String phone;
+    public String email;
     public List<String> techStack;
     public List<String> followers;
 
@@ -30,6 +32,8 @@ public class CompanyDetailsDTO { ;
         this.rating = companyDetails.rating;
         this.website = companyDetails.website;
         this.industry = companyDetails.industry;
+        this.phone = companyDetails.phone;
+        this.email = companyDetails.email;
         this.techStack = companyDetails.techStack;
         this.followers = companyDetails.followers;
     }

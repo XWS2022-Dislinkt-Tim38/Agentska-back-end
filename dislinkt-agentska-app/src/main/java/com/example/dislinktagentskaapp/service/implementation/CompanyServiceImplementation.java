@@ -76,4 +76,18 @@ public class CompanyServiceImplementation implements CompanyService {
     public void registerCompany(Company company){
         companyRepository.save(company);
     }
+
+    @Override
+    public List<CompanyDTO> getUserCompanies(String userId) {
+        List<CompanyDTO> companies = getAllCompanies();
+        List<CompanyDTO> userCompanies = new ArrayList<>();
+
+        for(CompanyDTO company : companies){
+            if(company.idUser.equals(userId)){
+                userCompanies.add(company);
+            }
+        }
+
+        return userCompanies;
+    }
 }

@@ -15,6 +15,8 @@ public class CompanyDetails {
     public double rating;
     public String website;
     public String industry;
+    public String phone;
+    public String email;
     public List<String> techStack;
     public List<String> followers;
 
@@ -29,6 +31,8 @@ public class CompanyDetails {
         this.rating = companyDetailsDTO.rating;
         this.website = companyDetailsDTO.website;
         this.industry = companyDetailsDTO.industry;
+        this.phone = companyDetailsDTO.phone;
+        this.email = companyDetailsDTO.email;
         this.techStack = companyDetailsDTO.techStack;
         this.followers = new ArrayList<>();
     }
