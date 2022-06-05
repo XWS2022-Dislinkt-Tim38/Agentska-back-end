@@ -31,6 +31,12 @@ public class CompanyController {
         return new ResponseEntity<>(companies, HttpStatus.OK);
     }
 
+    @GetMapping(value = "/usercompanies")
+    public ResponseEntity<List<CompanyDTO>> getUserCompanies(@RequestParam(value = "userId") String userId){
+        List<CompanyDTO> userCompanies = companyService.getUserCompanies(userId);
+        return new ResponseEntity<>(userCompanies, HttpStatus.OK);
+    }
+
     @PostMapping
     public ResponseEntity<Object> createCompany(@RequestBody CompanyDTO newCompanyDto){
         CompanyDTO company = companyService.createCompany(newCompanyDto);

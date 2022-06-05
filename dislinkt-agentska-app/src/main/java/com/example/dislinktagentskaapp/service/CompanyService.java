@@ -15,5 +15,6 @@ public interface CompanyService {
     CompanyDTO getCompany(String companyId);
     void registerCompany(Company company);
     CompanyDTO getCompanyByOwner(String ownerId);
+    List<CompanyDTO> getUserCompanies(String userId);
 
 }

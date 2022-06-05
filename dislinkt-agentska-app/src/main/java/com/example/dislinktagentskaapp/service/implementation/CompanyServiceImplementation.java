@@ -81,4 +81,17 @@ public class CompanyServiceImplementation implements CompanyService {
     public CompanyDTO getCompanyByOwner(String ownerId) {
         return new CompanyDTO(companyRepository.findCompanyByidUser(ownerId));
     }
+    @Override
+    public List<CompanyDTO> getUserCompanies(String userId) {
+        List<CompanyDTO> companies = getAllCompanies();
+        List<CompanyDTO> userCompanies = new ArrayList<>();
+
+        for(CompanyDTO company : companies){
+            if(company.idUser.equals(userId)){
+                userCompanies.add(company);
+            }
+        }
+
+        return userCompanies;
+    }
 }
