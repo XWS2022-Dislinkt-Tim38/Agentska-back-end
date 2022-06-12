@@ -153,7 +153,10 @@ public class SalaryServiceImplementation implements SalaryService {
                     }
                 }
             }
-            averageSalary = sum/counter;
+            if(counter > 0)
+                averageSalary = sum/counter;
+            else
+                averageSalary = 0;
 
             SalaryNewDTO salaryNewDTO = new SalaryNewDTO();
             salaryNewDTO.position = position;
