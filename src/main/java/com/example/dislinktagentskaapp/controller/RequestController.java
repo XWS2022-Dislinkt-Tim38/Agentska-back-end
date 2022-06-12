@@ -1,6 +1,5 @@
 package com.example.dislinktagentskaapp.controller;
 
-import com.example.dislinktagentskaapp.dto.CompanyDTO;
 import com.example.dislinktagentskaapp.dto.OwnershipRequestDTO;
 import com.example.dislinktagentskaapp.service.RequestService;
 import org.springframework.beans.factory.annotation.Autowired;

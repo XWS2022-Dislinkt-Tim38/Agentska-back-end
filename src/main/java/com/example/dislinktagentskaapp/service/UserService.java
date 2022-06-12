@@ -1,11 +1,8 @@
 package com.example.dislinktagentskaapp.service;
 
-import com.example.dislinktagentskaapp.dto.CompanyDTO;
 import com.example.dislinktagentskaapp.dto.LinkRequestDTO;
 import com.example.dislinktagentskaapp.dto.UserDTO;
 import com.example.dislinktagentskaapp.model.Role;
-import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 import java.util.List;
 
 public interface UserService {

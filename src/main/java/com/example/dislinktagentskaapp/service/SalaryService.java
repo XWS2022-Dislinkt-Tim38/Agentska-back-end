@@ -1,6 +1,5 @@
 package com.example.dislinktagentskaapp.service;
 
-import com.example.dislinktagentskaapp.dto.CommentDTO;
 import com.example.dislinktagentskaapp.dto.SalaryDTO;
 import com.example.dislinktagentskaapp.dto.SalaryNewDTO;
 

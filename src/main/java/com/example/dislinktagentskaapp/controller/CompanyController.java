@@ -4,7 +4,6 @@ import com.example.dislinktagentskaapp.dto.CompanyDTO;
 import com.example.dislinktagentskaapp.dto.CompanyDetailsDTO;
 import com.example.dislinktagentskaapp.model.Company;
 import com.example.dislinktagentskaapp.service.CompanyService;
-import com.example.dislinktagentskaapp.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
