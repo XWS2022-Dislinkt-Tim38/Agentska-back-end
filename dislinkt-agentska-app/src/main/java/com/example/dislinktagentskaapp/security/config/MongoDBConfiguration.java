@@ -1,4 +1,4 @@
-package com.example.dislinktagentskaapp.config;
+package com.example.dislinktagentskaapp.security.config;
 
 import com.example.dislinktagentskaapp.repository.UserRepository;
 import org.springframework.context.annotation.Configuration;
