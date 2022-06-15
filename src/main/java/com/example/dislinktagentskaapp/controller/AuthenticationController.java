@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -28,15 +29,22 @@ public class AuthenticationController {
     @PostMapping("/login")
     public ResponseEntity<UserTokenState> createAuthenticationToken(
             @RequestBody AuthenticationRequest authenticationRequest) {
-        Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(
-                authenticationRequest.getUsername(), authenticationRequest.getPassword()));
-        logger.info("POST REQUEST /login");
-        SecurityContextHolder.getContext().setAuthentication(authentication);
+        try {
+            Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(
+                    authenticationRequest.getUsername(), authenticationRequest.getPassword()));
 
-        CustomUserDetails userDetails = (CustomUserDetails) authentication.getPrincipal();
-        String jwt = tokenUtils.generateToken(userDetails.getUsername(), userDetails.getRole(), userDetails.user.id);
-        int expiresIn = tokenUtils.getExpiredIn();
-        logger.info("User with id: " + userDetails.user.id + " successfully authenticated");
-        return ResponseEntity.ok(new UserTokenState(jwt, expiresIn));
+            logger.info("POST REQUEST /login");
+            SecurityContextHolder.getContext().setAuthentication(authentication);
+
+            CustomUserDetails userDetails = (CustomUserDetails) authentication.getPrincipal();
+            String jwt = tokenUtils.generateToken(userDetails.getUsername(), userDetails.getRole(), userDetails.user.id);
+            int expiresIn = tokenUtils.getExpiredIn();
+            logger.info("User with id: " + userDetails.user.id + " successfully authenticated");
+            return ResponseEntity.ok(new UserTokenState(jwt, expiresIn));
+        } catch (BadCredentialsException exception){
+            logger.error("Failed login attempt for user with username: " + authenticationRequest.getUsername(), exception);
+            throw exception;
+        }
+
     }
 }
