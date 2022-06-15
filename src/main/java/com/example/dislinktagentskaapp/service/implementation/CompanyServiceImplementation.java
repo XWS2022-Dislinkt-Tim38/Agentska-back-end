@@ -7,6 +7,8 @@ import com.example.dislinktagentskaapp.model.Company;
 import com.example.dislinktagentskaapp.model.CompanyDetails;
 import com.example.dislinktagentskaapp.repository.CompanyRepository;
 import com.example.dislinktagentskaapp.service.CompanyService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +18,7 @@ import java.util.List;
 @Service
 public class CompanyServiceImplementation implements CompanyService {
 
+    Logger logger = LoggerFactory.getLogger(CompanyServiceImplementation.class);
     @Autowired
     CompanyRepository companyRepository;
 
@@ -23,6 +26,7 @@ public class CompanyServiceImplementation implements CompanyService {
     public CompanyDTO createCompany(CompanyDTO newCompanyDTO) {
         Company company = new Company(newCompanyDTO);
         companyRepository.save(company);
+        logger.info("Registered company with id: " + company.id + " in database");
         return new CompanyDTO(company);
     }
 
@@ -35,6 +39,7 @@ public class CompanyServiceImplementation implements CompanyService {
         for(Company company : companies){
             companiesDTO.add(new CompanyDTO(company));
         }
+        logger.info("Fetching all companies");
         return companiesDTO;
     }
 
@@ -48,6 +53,7 @@ public class CompanyServiceImplementation implements CompanyService {
                 .orElseThrow(CompanyNotFoundException::new);
         companyToUpdate.companyDetails = updateCompanyDTO.companyDetails;
         companyRepository.save(companyToUpdate);
+        logger.warn("Company information changed for company with id: " + companyToUpdate.id);
         return companyToUpdate;
     }
 
@@ -57,6 +63,7 @@ public class CompanyServiceImplementation implements CompanyService {
                 .orElseThrow(CompanyNotFoundException::new);
         companyToUpdate.companyDetails = new CompanyDetails(companyDetailsDTO);
         companyRepository.save(companyToUpdate);
+        logger.warn("Company details changed for company with id: " + companyToUpdate.id);
         return companyToUpdate;
     }
 
@@ -70,6 +77,7 @@ public class CompanyServiceImplementation implements CompanyService {
                 companyToSend = new CompanyDTO(company);
             }
         }
+        logger.info("Fetching company with id: " + companyId);
         return companyToSend;
     }
 
@@ -79,6 +87,7 @@ public class CompanyServiceImplementation implements CompanyService {
 
     @Override
     public CompanyDTO getCompanyByOwner(String ownerId) {
+        logger.info("Getting company by user with id: " + ownerId);
         return new CompanyDTO(companyRepository.findCompanyByidUser(ownerId));
     }
     @Override
@@ -92,6 +101,7 @@ public class CompanyServiceImplementation implements CompanyService {
             }
         }
 
+        logger.info("Getting companies by user with id: " + userId);
         return userCompanies;
     }
 }
