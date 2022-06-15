@@ -8,6 +8,8 @@ import com.example.dislinktagentskaapp.model.Role;
 import com.example.dislinktagentskaapp.model.User;
 import com.example.dislinktagentskaapp.repository.UserRepository;
 import com.example.dislinktagentskaapp.service.UserService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -19,6 +21,7 @@ import java.util.List;
 @Service
 public class UserServiceImplementation implements UserService {
 
+    Logger logger = LoggerFactory.getLogger((UserServiceImplementation.class));
     @Autowired
     UserRepository userRepository;
 
@@ -29,6 +32,7 @@ public class UserServiceImplementation implements UserService {
 
     public UserDTO getUser(String id){
         User user = userRepository.findById(id).orElseThrow(UserNotFoundException::new);
+        logger.info("Getting user with id: " + id);
         return new UserDTO(user);
     }
 
@@ -38,6 +42,7 @@ public class UserServiceImplementation implements UserService {
         for (User user : users) {
             usersDTO.add(new UserDTO(user));
         }
+        logger.info("Fetching all users");
         return usersDTO;
     }
 
@@ -49,6 +54,7 @@ public class UserServiceImplementation implements UserService {
         }
         else {
             userRepository.save(newUser);
+            logger.info("Registered user with id: " + newUser.id + " to database");
             return new UserDTO(newUser);
         }
     }
@@ -70,6 +76,7 @@ public class UserServiceImplementation implements UserService {
         userToUpdate.phoneNumber = updateUserDTO.phoneNumber;
         userToUpdate.key = updateUserDTO.key;
         userToUpdate.role = updateUserDTO.role;
+        logger.warn("User information updated for user with id: " + updateUserDTO.id);
         userRepository.save(userToUpdate);
     }
 
@@ -78,6 +85,7 @@ public class UserServiceImplementation implements UserService {
         if (!exists)
             throw new UserNotFoundException();
 
+        logger.info("User with id: " + id + " deleted");
         userRepository.deleteById(id);
     }
     private boolean usernameExists(String username){
@@ -86,6 +94,7 @@ public class UserServiceImplementation implements UserService {
 
     public UserDTO getUserByUsername(String username){
         User user = userRepository.findByUsername(username);
+        logger.info("Fetching user with username: " + user);
         return new UserDTO(user);
     }
 
@@ -93,6 +102,7 @@ public class UserServiceImplementation implements UserService {
     public void changeRole(String idUser, Role role) {
         User user = userRepository.findById(idUser).orElseThrow(UserNotFoundException::new);
         user.role = role;
+        logger.warn("Role changed to: " + role + " for user with id: " + idUser);
         userRepository.save(user);
     }
 
@@ -101,6 +111,7 @@ public class UserServiceImplementation implements UserService {
         User user = userRepository.findById(linkRequestDTO.userId).orElseThrow(UserNotFoundException::new);
         user.key = linkRequestDTO.keyValue;
         userRepository.save(user);
+        logger.info("Dislinkt key set for user with id: " + user.id);
         return new UserDTO(user);
     }
 
