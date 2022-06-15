@@ -6,6 +6,8 @@ import com.example.dislinktagentskaapp.model.Company;
 import com.example.dislinktagentskaapp.model.Offer;
 import com.example.dislinktagentskaapp.repository.CompanyRepository;
 import com.example.dislinktagentskaapp.service.OfferService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +17,7 @@ import java.util.List;
 @Service
 public class OfferServiceImplementation implements OfferService {
 
+    Logger logger = LoggerFactory.getLogger(OfferServiceImplementation.class);
     @Autowired
     CompanyRepository companyRepository;
 
@@ -25,6 +28,7 @@ public class OfferServiceImplementation implements OfferService {
         Offer offer = new Offer(newOfferDTO);
         company.offers.add(offer);
         companyRepository.save(company);
+        logger.info("Registered offer with id: " + offer.id + " in database");
         return new OfferDTO(offer);
     }
 
@@ -39,6 +43,7 @@ public class OfferServiceImplementation implements OfferService {
                 break;
             }
 
+        logger.info("Fetching offer with id: " + foundOffer.id);
         return new OfferDTO(foundOffer);
     }
 
@@ -50,6 +55,7 @@ public class OfferServiceImplementation implements OfferService {
         for(Offer offer : company.offers)
             offersDTO.add(new OfferDTO(offer));
 
+        logger.info("Fetching all offers by company with id: " + companyId);
         return offersDTO;
     }
 
@@ -61,6 +67,7 @@ public class OfferServiceImplementation implements OfferService {
             for(Offer offer : company.offers)
                 offers.add(new OfferDTO(offer));
 
+        logger.info("Fetching all offers");
         return offers;
     }
 
@@ -88,6 +95,7 @@ public class OfferServiceImplementation implements OfferService {
                 response = true;
                 break;
             }
+        logger.warn("Offer details changed for offer with id: " + updateOfferDTO.id);
         return response;
     }
 
@@ -97,6 +105,7 @@ public class OfferServiceImplementation implements OfferService {
                 .orElseThrow(CompanyNotFoundException::new);
         boolean response = company.offers.removeIf(offer -> offer.id.equals(offerId));
         companyRepository.save(company);
+        logger.info("Offer with id: " + offerId + " deleted");
         return response;
     }
 
@@ -112,18 +121,20 @@ public class OfferServiceImplementation implements OfferService {
                 break;
             }
         companyRepository.save(company);
+        logger.info("Offer with id: " + offerId + " is shared on Dislinkt now");
         return response;
     }
 
     @Override
-    public List<OfferDTO> getAllOffersByUser(String idUSer) {
+    public List<OfferDTO> getAllOffersByUser(String idUser) {
         List<OfferDTO> allOffers = getAllOffers();
         List<OfferDTO> offers = new ArrayList<>();
 
         for(OfferDTO offer : allOffers)
-            if(offer.idUser.equals(idUSer))
+            if(offer.idUser.equals(idUser))
                 offers.add(offer);
 
+        logger.info("Fetching all offers by user with id: " + idUser);
         return offers;
     }
 }
