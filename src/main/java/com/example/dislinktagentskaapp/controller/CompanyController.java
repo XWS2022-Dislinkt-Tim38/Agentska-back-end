@@ -4,6 +4,8 @@ import com.example.dislinktagentskaapp.dto.CompanyDTO;
 import com.example.dislinktagentskaapp.dto.CompanyDetailsDTO;
 import com.example.dislinktagentskaapp.model.Company;
 import com.example.dislinktagentskaapp.service.CompanyService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +18,7 @@ import java.util.List;
 @RequestMapping(value = "/company")
 public class CompanyController {
 
+    Logger logger = LoggerFactory.getLogger(CompanyController.class);
     @Autowired
     CompanyService companyService;
 
@@ -26,24 +29,28 @@ public class CompanyController {
 
     @GetMapping
     public ResponseEntity<List<CompanyDTO>> getAllCompanies(){
+        logger.info("GET REQUEST /company");
         List<CompanyDTO> companies = companyService.getAllCompanies();
         return new ResponseEntity<>(companies, HttpStatus.OK);
     }
 
     @GetMapping(value = "/usercompanies")
     public ResponseEntity<List<CompanyDTO>> getUserCompanies(@RequestParam(value = "userId") String userId){
+        logger.info("GET REQUEST /company/usercompanies");
         List<CompanyDTO> userCompanies = companyService.getUserCompanies(userId);
         return new ResponseEntity<>(userCompanies, HttpStatus.OK);
     }
 
     @PostMapping
     public ResponseEntity<Object> createCompany(@RequestBody CompanyDTO newCompanyDto){
+        logger.info("POST REQUEST /company");
         CompanyDTO company = companyService.createCompany(newCompanyDto);
         return new ResponseEntity<>(company, HttpStatus.OK);
     }
 
     @PutMapping
     public ResponseEntity<Object> updateCompany(@RequestBody CompanyDTO updateCompanyDTO){
+        logger.info("PUT REQUEST /company");
         Company company = companyService.updateCompany(updateCompanyDTO);
         return new ResponseEntity<>(company, HttpStatus.OK);
 
@@ -52,18 +59,21 @@ public class CompanyController {
     @PutMapping(value = "/details")
     public ResponseEntity<Object> updateCompanyDetails(@RequestParam(value = "companyId") String companyId,
                                                        @RequestBody CompanyDetailsDTO updateCompanyDetailsDTO){
+        logger.info("PUT REQUEST /company/details");
         Company company  = companyService.updateCompanyDetails(companyId, updateCompanyDetailsDTO);
         return new ResponseEntity<>(company, HttpStatus.OK);
     }
 
     @GetMapping(value = "/{id}")
     public ResponseEntity<CompanyDTO> getCompany(@PathVariable String id){
+        logger.info("GET REQUEST /company/{id}");
         CompanyDTO companyDTO = companyService.getCompany(id);
         return new ResponseEntity<>(companyDTO, HttpStatus.OK);
     }
 
     @GetMapping(value = "/user/{idOwner}")
     public ResponseEntity<CompanyDTO> getCompanyByOwner(@PathVariable String idOwner){
+        logger.info("GET REQUEST /company/user/{idOwner}");
         CompanyDTO companyDTO = companyService.getCompanyByOwner(idOwner);
         return new ResponseEntity<>(companyDTO, HttpStatus.OK);
     }
