@@ -1,0 +1,61 @@
+2022-06-16 18:08:41,389 INFO com.example.dislinktagentskaapp.controller.UserController [http-nio-8020-exec-10] GET REQUEST /user/username/{username}
+2022-06-16 18:08:41,394 INFO com.example.dislinktagentskaapp.service.implementation.UserServiceImplementation [http-nio-8020-exec-10] Fetching user with username: com.example.dislinktagentskaapp.model.User@4f433e75
+2022-06-16 18:08:41,408 INFO com.example.dislinktagentskaapp.controller.CompanyController [http-nio-8020-exec-9] GET REQUEST /company/user/{idOwner}
+2022-06-16 18:08:41,409 INFO com.example.dislinktagentskaapp.service.implementation.CompanyServiceImplementation [http-nio-8020-exec-9] Getting company by user with id: user_45b4a74d-b75e-489f-8d74-26059c00cd8a
+2022-06-16 18:08:50,701 INFO com.example.dislinktagentskaapp.controller.AuthenticationController [http-nio-8020-exec-1] PUT REQUEST /auth/enable2fa/{idUser}
+2022-06-16 18:08:50,736 WARN com.example.dislinktagentskaapp.service.implementation.UserServiceImplementation [http-nio-8020-exec-1] Changes were made to user with id: user_45b4a74d-b75e-489f-8d74-26059c00cd8a
+2022-06-16 18:08:50,736 INFO com.example.dislinktagentskaapp.service.implementation.UserServiceImplementation [http-nio-8020-exec-1] QR Code generated for user with id: user_45b4a74d-b75e-489f-8d74-26059c00cd8a
+2022-06-16 18:09:59,680 INFO com.example.dislinktagentskaapp.controller.UserController [http-nio-8020-exec-7] GET REQUEST /user/username/{username}
+2022-06-16 18:09:59,683 INFO com.example.dislinktagentskaapp.service.implementation.UserServiceImplementation [http-nio-8020-exec-7] Fetching user with username: com.example.dislinktagentskaapp.model.User@5baa92c7
+2022-06-16 18:09:59,694 INFO com.example.dislinktagentskaapp.controller.CompanyController [http-nio-8020-exec-8] GET REQUEST /company/user/{idOwner}
+2022-06-16 18:09:59,694 INFO com.example.dislinktagentskaapp.service.implementation.CompanyServiceImplementation [http-nio-8020-exec-8] Getting company by user with id: user_45b4a74d-b75e-489f-8d74-26059c00cd8a
+2022-06-16 18:11:03,289 INFO com.example.dislinktagentskaapp.controller.UserController [http-nio-8020-exec-9] GET REQUEST /user/username/{username}
+2022-06-16 18:11:03,292 INFO com.example.dislinktagentskaapp.service.implementation.UserServiceImplementation [http-nio-8020-exec-9] Fetching user with username: com.example.dislinktagentskaapp.model.User@515629fa
+2022-06-16 18:11:03,329 INFO com.example.dislinktagentskaapp.controller.CompanyController [http-nio-8020-exec-2] GET REQUEST /company/user/{idOwner}
+2022-06-16 18:11:03,330 INFO com.example.dislinktagentskaapp.service.implementation.CompanyServiceImplementation [http-nio-8020-exec-2] Getting company by user with id: user_45b4a74d-b75e-489f-8d74-26059c00cd8a
+2022-06-16 18:11:21,315 INFO com.example.dislinktagentskaapp.controller.UserController [http-nio-8020-exec-3] GET REQUEST /user/username/{username}
+2022-06-16 18:11:21,318 INFO com.example.dislinktagentskaapp.service.implementation.UserServiceImplementation [http-nio-8020-exec-3] Fetching user with username: com.example.dislinktagentskaapp.model.User@c921edb
+2022-06-16 18:11:21,349 INFO com.example.dislinktagentskaapp.controller.CompanyController [http-nio-8020-exec-1] GET REQUEST /company/user/{idOwner}
+2022-06-16 18:11:21,349 INFO com.example.dislinktagentskaapp.service.implementation.CompanyServiceImplementation [http-nio-8020-exec-1] Getting company by user with id: user_45b4a74d-b75e-489f-8d74-26059c00cd8a
+2022-06-16 18:11:27,514 INFO com.example.dislinktagentskaapp.controller.AuthenticationController [http-nio-8020-exec-5] PUT REQUEST /auth/enable2fa/{idUser}
+2022-06-16 18:11:27,520 WARN com.example.dislinktagentskaapp.service.implementation.UserServiceImplementation [http-nio-8020-exec-5] Changes were made to user with id: user_45b4a74d-b75e-489f-8d74-26059c00cd8a
+2022-06-16 18:11:27,520 INFO com.example.dislinktagentskaapp.service.implementation.UserServiceImplementation [http-nio-8020-exec-5] QR Code generated for user with id: user_45b4a74d-b75e-489f-8d74-26059c00cd8a
+2022-06-16 18:12:12,809 INFO com.example.dislinktagentskaapp.controller.AuthenticationController [http-nio-8020-exec-6] POST REQUEST /auth/verify2fa
+2022-06-16 18:14:46,815 INFO com.example.dislinktagentskaapp.controller.AuthenticationController [http-nio-8020-exec-8] PUT REQUEST /auth/enable2fa/{idUser}
+2022-06-16 18:14:46,820 WARN com.example.dislinktagentskaapp.service.implementation.UserServiceImplementation [http-nio-8020-exec-8] Changes were made to user with id: user_45b4a74d-b75e-489f-8d74-26059c00cd8a
+2022-06-16 18:14:46,821 INFO com.example.dislinktagentskaapp.service.implementation.UserServiceImplementation [http-nio-8020-exec-8] QR Code generated for user with id: user_45b4a74d-b75e-489f-8d74-26059c00cd8a
+2022-06-16 18:14:52,306 INFO com.example.dislinktagentskaapp.controller.UserController [http-nio-8020-exec-10] GET REQUEST /user/username/{username}
+2022-06-16 18:14:52,308 INFO com.example.dislinktagentskaapp.service.implementation.UserServiceImplementation [http-nio-8020-exec-10] Fetching user with username: com.example.dislinktagentskaapp.model.User@280d4e7c
+2022-06-16 18:14:52,335 INFO com.example.dislinktagentskaapp.controller.CompanyController [http-nio-8020-exec-9] GET REQUEST /company/user/{idOwner}
+2022-06-16 18:14:52,335 INFO com.example.dislinktagentskaapp.service.implementation.CompanyServiceImplementation [http-nio-8020-exec-9] Getting company by user with id: user_45b4a74d-b75e-489f-8d74-26059c00cd8a
+2022-06-16 18:14:59,479 INFO com.example.dislinktagentskaapp.controller.AuthenticationController [http-nio-8020-exec-2] PUT REQUEST /auth/enable2fa/{idUser}
+2022-06-16 18:14:59,485 WARN com.example.dislinktagentskaapp.service.implementation.UserServiceImplementation [http-nio-8020-exec-2] Changes were made to user with id: user_45b4a74d-b75e-489f-8d74-26059c00cd8a
+2022-06-16 18:14:59,485 INFO com.example.dislinktagentskaapp.service.implementation.UserServiceImplementation [http-nio-8020-exec-2] QR Code generated for user with id: user_45b4a74d-b75e-489f-8d74-26059c00cd8a
+2022-06-16 18:15:41,868 INFO com.example.dislinktagentskaapp.controller.AuthenticationController [http-nio-8020-exec-1] POST REQUEST /auth/verify2fa
+2022-06-16 18:15:50,871 INFO com.example.dislinktagentskaapp.controller.AuthenticationController [http-nio-8020-exec-6] PUT REQUEST /auth/enable2fa/{idUser}
+2022-06-16 18:15:50,876 WARN com.example.dislinktagentskaapp.service.implementation.UserServiceImplementation [http-nio-8020-exec-6] Changes were made to user with id: user_45b4a74d-b75e-489f-8d74-26059c00cd8a
+2022-06-16 18:15:50,876 WARN com.example.dislinktagentskaapp.service.implementation.UserServiceImplementation [http-nio-8020-exec-6] 2FA enabled for user with id: user_45b4a74d-b75e-489f-8d74-26059c00cd8a
+2022-06-16 18:15:52,614 INFO com.example.dislinktagentskaapp.controller.CompanyController [http-nio-8020-exec-4] GET REQUEST /company
+2022-06-16 18:15:52,618 INFO com.example.dislinktagentskaapp.service.implementation.CompanyServiceImplementation [http-nio-8020-exec-4] Fetching all companies
+2022-06-16 18:15:52,624 INFO com.example.dislinktagentskaapp.controller.OfferController [http-nio-8020-exec-7] GET REQUEST /offer
+2022-06-16 18:15:52,630 INFO com.example.dislinktagentskaapp.service.implementation.OfferServiceImplementation [http-nio-8020-exec-7] Fetching all offers
+2022-06-16 18:15:57,790 INFO com.example.dislinktagentskaapp.controller.UserController [http-nio-8020-exec-8] GET REQUEST /user/username/{username}
+2022-06-16 18:15:57,793 INFO com.example.dislinktagentskaapp.service.implementation.UserServiceImplementation [http-nio-8020-exec-8] Fetching user with username: com.example.dislinktagentskaapp.model.User@3f3f673e
+2022-06-16 18:15:57,806 INFO com.example.dislinktagentskaapp.controller.CompanyController [http-nio-8020-exec-10] GET REQUEST /company/user/{idOwner}
+2022-06-16 18:15:57,807 INFO com.example.dislinktagentskaapp.service.implementation.CompanyServiceImplementation [http-nio-8020-exec-10] Getting company by user with id: user_45b4a74d-b75e-489f-8d74-26059c00cd8a
+2022-06-16 18:16:21,284 INFO com.example.dislinktagentskaapp.controller.AuthenticationController [http-nio-8020-exec-2] POST REQUEST /auth/login
+2022-06-16 18:16:40,043 INFO com.example.dislinktagentskaapp.controller.AuthenticationController [http-nio-8020-exec-1] POST REQUEST /auth/login/2fa
+2022-06-16 18:17:05,397 INFO com.example.dislinktagentskaapp.controller.AuthenticationController [http-nio-8020-exec-5] POST REQUEST /auth/login
+2022-06-16 18:17:24,276 INFO com.example.dislinktagentskaapp.controller.AuthenticationController [http-nio-8020-exec-6] POST REQUEST /auth/login/2fa
+2022-06-16 18:17:43,494 INFO com.example.dislinktagentskaapp.controller.AuthenticationController [http-nio-8020-exec-4] POST REQUEST /auth/login/2fa
+2022-06-16 18:18:11,594 INFO com.example.dislinktagentskaapp.controller.AuthenticationController [http-nio-8020-exec-7] POST REQUEST /auth/login
+2022-06-16 18:18:11,595 INFO com.example.dislinktagentskaapp.controller.AuthenticationController [http-nio-8020-exec-7] User with id: user_45b4a74d-b75e-489f-8d74-26059c00cd8a successfully authenticated
+2022-06-16 18:18:11,623 INFO com.example.dislinktagentskaapp.controller.CompanyController [http-nio-8020-exec-8] GET REQUEST /company
+2022-06-16 18:18:11,628 INFO com.example.dislinktagentskaapp.service.implementation.CompanyServiceImplementation [http-nio-8020-exec-8] Fetching all companies
+2022-06-16 18:18:11,638 INFO com.example.dislinktagentskaapp.controller.OfferController [http-nio-8020-exec-10] GET REQUEST /offer
+2022-06-16 18:18:11,641 INFO com.example.dislinktagentskaapp.service.implementation.OfferServiceImplementation [http-nio-8020-exec-10] Fetching all offers
+2022-06-16 18:18:12,428 INFO com.example.dislinktagentskaapp.controller.CompanyController [http-nio-8020-exec-9] GET REQUEST /company
+2022-06-16 18:18:12,431 INFO com.example.dislinktagentskaapp.service.implementation.CompanyServiceImplementation [http-nio-8020-exec-9] Fetching all companies
+2022-06-16 18:18:12,432 INFO com.example.dislinktagentskaapp.controller.OfferController [http-nio-8020-exec-2] GET REQUEST /offer
+2022-06-16 18:18:12,435 INFO com.example.dislinktagentskaapp.service.implementation.OfferServiceImplementation [http-nio-8020-exec-2] Fetching all offers
+2022-06-16 18:18:13,190 INFO com.example.dislinktagentskaapp.controller.UserController [http-nio-8020-exec-3] GET REQUEST /user/username/{username}

@@ -120,15 +120,29 @@ public class UserServiceImplementation implements UserService {
     }
 
     @Override
-    public String setupMfa(String idUser) {
+    public void setupMfa(String idUser) {
         User user = userRepository.findById(idUser).orElseThrow(UserNotFoundException::new);
-        user.secret = totpManager.generateSecret();
         user.isUsingMfa = true;
 
         try{
             userRepository.save(user);
             logger.warn("Changes were made to user with id: " + idUser);
             logger.warn("2FA enabled for user with id: " + idUser);
+
+        } catch(Exception e) {
+            logger.error("Could not write to database while updating user with id: " + idUser, e);
+            throw e;
+        }
+    }
+
+    @Override
+    public String generateQRCode(String idUser) {
+        User user = userRepository.findById(idUser).orElseThrow(UserNotFoundException::new);
+        user.secret = totpManager.generateSecret();
+        try{
+            userRepository.save(user);
+            logger.warn("Changes were made to user with id: " + idUser);
+            logger.info("QR Code generated for user with id: " + idUser);
             return totpManager.getUriForImage(user.secret);
 
         } catch(Exception e) {

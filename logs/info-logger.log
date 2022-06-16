@@ -1,31 +1,12 @@
-2022-06-16 17:20:23,875 INFO com.example.dislinktagentskaapp.service.implementation.UserServiceImplementation [http-nio-8020-exec-8] Fetching user with username: com.example.dislinktagentskaapp.model.User@44edc69f
-2022-06-16 17:20:25,007 INFO com.example.dislinktagentskaapp.controller.UserController [http-nio-8020-exec-9] GET REQUEST /user/username/{username}
-2022-06-16 17:20:25,009 INFO com.example.dislinktagentskaapp.service.implementation.UserServiceImplementation [http-nio-8020-exec-9] Fetching user with username: com.example.dislinktagentskaapp.model.User@418f13ce
-2022-06-16 17:20:25,021 INFO com.example.dislinktagentskaapp.controller.CompanyController [http-nio-8020-exec-1] GET REQUEST /company/user/{idOwner}
-2022-06-16 17:20:25,021 INFO com.example.dislinktagentskaapp.service.implementation.CompanyServiceImplementation [http-nio-8020-exec-1] Getting company by user with id: user_45b4a74d-b75e-489f-8d74-26059c00cd8a
-2022-06-16 17:21:15,698 INFO com.example.dislinktagentskaapp.controller.UserController [http-nio-8020-exec-10] GET REQUEST /user/username/{username}
-2022-06-16 17:21:15,701 INFO com.example.dislinktagentskaapp.service.implementation.UserServiceImplementation [http-nio-8020-exec-10] Fetching user with username: com.example.dislinktagentskaapp.model.User@22d1f596
-2022-06-16 17:21:15,765 INFO com.example.dislinktagentskaapp.controller.CompanyController [http-nio-8020-exec-3] GET REQUEST /company/user/{idOwner}
-2022-06-16 17:21:15,765 INFO com.example.dislinktagentskaapp.service.implementation.CompanyServiceImplementation [http-nio-8020-exec-3] Getting company by user with id: user_45b4a74d-b75e-489f-8d74-26059c00cd8a
-2022-06-16 17:22:08,621 INFO org.springframework.boot.StartupInfoLogger [main] Starting DislinktAgentskaAppApplication using Java 18.0.1.1 on DESKTOP-JN6GJII with PID 1976 (C:\Users\Iodum99\Desktop\Faks Projekti\Agentska-back-end\target\classes started by Iodum99 in C:\Users\Iodum99\Desktop\Faks Projekti\Agentska-back-end)
-2022-06-16 17:22:08,624 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.6.7, Spring v5.3.19
-2022-06-16 17:22:08,624 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
-2022-06-16 17:22:11,976 INFO org.springframework.boot.StartupInfoLogger [main] Started DislinktAgentskaAppApplication in 4.03 seconds (JVM running for 4.944)
-2022-06-16 17:22:30,016 INFO com.example.dislinktagentskaapp.controller.UserController [http-nio-8020-exec-1] GET REQUEST /user/username/{username}
-2022-06-16 17:22:30,131 INFO com.example.dislinktagentskaapp.service.implementation.UserServiceImplementation [http-nio-8020-exec-1] Fetching user with username: com.example.dislinktagentskaapp.model.User@52d5eaa1
-2022-06-16 17:22:30,702 INFO com.example.dislinktagentskaapp.controller.CompanyController [http-nio-8020-exec-2] GET REQUEST /company/user/{idOwner}
-2022-06-16 17:22:30,702 INFO com.example.dislinktagentskaapp.service.implementation.CompanyServiceImplementation [http-nio-8020-exec-2] Getting company by user with id: user_45b4a74d-b75e-489f-8d74-26059c00cd8a
-2022-06-16 17:22:38,115 INFO org.springframework.boot.StartupInfoLogger [main] Starting DislinktAgentskaAppApplication using Java 18.0.1.1 on DESKTOP-JN6GJII with PID 12580 (C:\Users\Iodum99\Desktop\Faks Projekti\Agentska-back-end\target\classes started by Iodum99 in C:\Users\Iodum99\Desktop\Faks Projekti\Agentska-back-end)
-2022-06-16 17:22:38,117 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.6.7, Spring v5.3.19
-2022-06-16 17:22:38,118 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
-2022-06-16 17:22:40,733 INFO org.springframework.boot.StartupInfoLogger [main] Started DislinktAgentskaAppApplication in 3.007 seconds (JVM running for 3.924)
-2022-06-16 17:22:48,551 INFO com.example.dislinktagentskaapp.controller.UserController [http-nio-8020-exec-1] GET REQUEST /user/username/{username}
-2022-06-16 17:22:48,653 INFO com.example.dislinktagentskaapp.service.implementation.UserServiceImplementation [http-nio-8020-exec-1] Fetching user with username: com.example.dislinktagentskaapp.model.User@72b969fb
-2022-06-16 17:22:48,722 INFO com.example.dislinktagentskaapp.controller.CompanyController [http-nio-8020-exec-2] GET REQUEST /company/user/{idOwner}
-2022-06-16 17:22:48,723 INFO com.example.dislinktagentskaapp.service.implementation.CompanyServiceImplementation [http-nio-8020-exec-2] Getting company by user with id: user_45b4a74d-b75e-489f-8d74-26059c00cd8a
-2022-06-16 17:23:05,442 INFO com.example.dislinktagentskaapp.controller.AuthenticationController [http-nio-8020-exec-5] PUT REQUEST /auth/enable2fa/{idUser}
-2022-06-16 17:23:05,482 WARN com.example.dislinktagentskaapp.service.implementation.UserServiceImplementation [http-nio-8020-exec-5] Changes were made to user with id: user_45b4a74d-b75e-489f-8d74-26059c00cd8a
-2022-06-16 17:23:05,483 WARN com.example.dislinktagentskaapp.service.implementation.UserServiceImplementation [http-nio-8020-exec-5] 2FA enabled for user with id: user_45b4a74d-b75e-489f-8d74-26059c00cd8a
-2022-06-16 17:23:21,146 INFO com.example.dislinktagentskaapp.controller.UserController [http-nio-8020-exec-6] GET REQUEST /user/username/{username}
-2022-06-16 17:23:21,150 INFO com.example.dislinktagentskaapp.service.implementation.UserServiceImplementation [http-nio-8020-exec-6] Fetching user with username: com.example.dislinktagentskaapp.model.User@2892a159
-2022-06-16 17:23:21,161 INFO com.example.dislinktagentskaapp.controller.CompanyController [http-nio-8020-exec-7] GET REQUEST /company/user/{idOwner}
+2022-06-16 18:35:42,521 INFO com.example.dislinktagentskaapp.service.implementation.OfferServiceImplementation [http-nio-8020-exec-1] Fetching all offers
+2022-06-16 18:35:54,697 INFO com.example.dislinktagentskaapp.controller.AuthenticationController [http-nio-8020-exec-4] POST REQUEST /auth/login
+2022-06-16 18:36:03,893 INFO com.example.dislinktagentskaapp.controller.AuthenticationController [http-nio-8020-exec-5] POST REQUEST /auth/login/2fa
+2022-06-16 18:36:03,895 INFO com.example.dislinktagentskaapp.controller.AuthenticationController [http-nio-8020-exec-5] User with id: user_45b4a74d-b75e-489f-8d74-26059c00cd8a successfully authenticated
+2022-06-16 18:36:05,209 INFO com.example.dislinktagentskaapp.controller.CompanyController [http-nio-8020-exec-6] GET REQUEST /company
+2022-06-16 18:36:05,209 INFO com.example.dislinktagentskaapp.controller.OfferController [http-nio-8020-exec-7] GET REQUEST /offer
+2022-06-16 18:36:05,213 INFO com.example.dislinktagentskaapp.service.implementation.CompanyServiceImplementation [http-nio-8020-exec-6] Fetching all companies
+2022-06-16 18:36:05,213 INFO com.example.dislinktagentskaapp.service.implementation.OfferServiceImplementation [http-nio-8020-exec-7] Fetching all offers
+2022-06-16 18:36:05,857 INFO com.example.dislinktagentskaapp.controller.CompanyController [http-nio-8020-exec-8] GET REQUEST /company
+2022-06-16 18:36:05,860 INFO com.example.dislinktagentskaapp.controller.OfferController [http-nio-8020-exec-9] GET REQUEST /offer
+2022-06-16 18:36:05,860 INFO com.example.dislinktagentskaapp.service.implementation.CompanyServiceImplementation [http-nio-8020-exec-8] Fetching all companies
+2022-06-16 18:36:05,862 INFO com.example.dislinktagentskaapp.service.implementation.OfferServiceImplementation [http-nio-8020-exec-9] Fetching all offers

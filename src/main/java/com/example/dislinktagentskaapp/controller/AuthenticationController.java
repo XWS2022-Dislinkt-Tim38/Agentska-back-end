@@ -62,15 +62,46 @@ public class AuthenticationController {
             throw exception;
         }
     }
-    @PutMapping("/enable2fa/{idUser}")
-    public ResponseEntity<Object> enable2fa(@PathVariable String idUser){
+    @PutMapping("/generateQRCode/{idUser}")
+    public ResponseEntity<Object> generateQRCode(@PathVariable String idUser){
         logger.info("PUT REQUEST /auth/enable2fa/{idUser}");
-        String response = userService.setupMfa(idUser);
+        String response = userService.generateQRCode(idUser);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
+    @PutMapping("/enable2fa/{idUser}")
+    public ResponseEntity<Object> enable2fa(@PathVariable String idUser){
+        logger.info("PUT REQUEST /auth/enable2fa/{idUser}");
+        userService.setupMfa(idUser);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    @PostMapping(value = "/login/2fa")
+    public ResponseEntity<Object> login2fa(@RequestBody AuthenticationRequest authenticationRequest){
+
+        try {
+            Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(
+                    authenticationRequest.getUsername(), authenticationRequest.getPassword()));
+            logger.info("POST REQUEST /auth/login/2fa");
+            SecurityContextHolder.getContext().setAuthentication(authentication);
+            CustomUserDetails userDetails = (CustomUserDetails) authentication.getPrincipal();
+
+            if(totpManager.verifyCode(authenticationRequest.getMfaCode(), userDetails.user.secret)){
+                String jwt = tokenUtils.generateToken(userDetails.getUsername(), userDetails.getRole(), userDetails.user.id);
+                int expiresIn = tokenUtils.getExpiredIn();
+                logger.info("User with id: " + userDetails.user.id + " successfully authenticated");
+                return ResponseEntity.ok(new UserTokenState(jwt, expiresIn));
+            } else throw new BadRequestException();
+
+        } catch (BadCredentialsException exception){
+            logger.error("Failed login attempt for user with username: " + authenticationRequest.getUsername(), exception);
+            throw exception;
+        }
+
+    }
+
     @PostMapping(value = "/verify2fa")
-    public ResponseEntity<Object> verify2fa(@RequestBody AuthenticationRequest authenticationRequest){
+    public ResponseEntity<Object> verify2fa(@RequestBody AuthenticationRequest authenticationRequest) {
 
         try {
             Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(
@@ -80,10 +111,7 @@ public class AuthenticationController {
             CustomUserDetails userDetails = (CustomUserDetails) authentication.getPrincipal();
 
             if(totpManager.verifyCode(authenticationRequest.getMfaCode(), userDetails.user.secret)){
-                String jwt = tokenUtils.generateToken(userDetails.getUsername(), userDetails.getRole(), userDetails.user.id);
-                int expiresIn = tokenUtils.getExpiredIn();
-                logger.info("User with id: " + userDetails.user.id + " successfully authenticated");
-                return ResponseEntity.ok(new UserTokenState(jwt, expiresIn));
+                return new ResponseEntity<>(true, HttpStatus.OK);
             } else throw new BadRequestException();
 
         } catch (BadCredentialsException exception){
