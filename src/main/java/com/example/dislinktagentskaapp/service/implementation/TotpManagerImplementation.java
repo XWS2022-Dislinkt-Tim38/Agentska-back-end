@@ -30,9 +30,9 @@ public class TotpManagerImplementation implements TotpManager {
         QrData data = new QrData.Builder()
                 .label("Two-factor-auth-test")
                 .secret(secret)
-                .issuer("exampleTwoFactor")
+                .issuer("Dislinkt Agent")
                 .algorithm(HashingAlgorithm.SHA1)
-                .digits(6)
+                .digits(6)git ad
                 .period(30)
                 .build();
 

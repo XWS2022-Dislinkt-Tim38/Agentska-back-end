@@ -1,4 +1,4 @@
-2022-06-17 01:05:42,921 ERROR com.example.dislinktagentskaapp.controller.AuthenticationController [http-nio-8020-exec-9] Failed login attempt for user with username: 
+2022-06-17 01:05:15,962 ERROR com.example.dislinktagentskaapp.controller.AuthenticationController [http-nio-8020-exec-2] Failed login attempt for user with username: 
 org.springframework.security.authentication.BadCredentialsException: Bad credentials
 	at org.springframework.security.authentication.dao.AbstractUserDetailsAuthenticationProvider.authenticate(AbstractUserDetailsAuthenticationProvider.java:141)
 	at org.springframework.security.authentication.ProviderManager.authenticate(ProviderManager.java:182)
@@ -59,7 +59,7 @@ org.springframework.security.authentication.BadCredentialsException: Bad credent
 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:833)
-2022-06-17 01:09:41,035 ERROR com.example.dislinktagentskaapp.controller.AuthenticationController [http-nio-8020-exec-9] Failed login attempt for user with username: 
+2022-06-17 01:05:16,762 ERROR com.example.dislinktagentskaapp.controller.AuthenticationController [http-nio-8020-exec-6] Failed login attempt for user with username: 
 org.springframework.security.authentication.BadCredentialsException: Bad credentials
 	at org.springframework.security.authentication.dao.AbstractUserDetailsAuthenticationProvider.authenticate(AbstractUserDetailsAuthenticationProvider.java:141)
 	at org.springframework.security.authentication.ProviderManager.authenticate(ProviderManager.java:182)
