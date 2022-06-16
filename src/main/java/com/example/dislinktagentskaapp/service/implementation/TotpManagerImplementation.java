@@ -32,7 +32,7 @@ public class TotpManagerImplementation implements TotpManager {
                 .secret(secret)
                 .issuer("Dislinkt Agent")
                 .algorithm(HashingAlgorithm.SHA1)
-                .digits(6)git ad
+                .digits(6)
                 .period(30)
                 .build();
 
