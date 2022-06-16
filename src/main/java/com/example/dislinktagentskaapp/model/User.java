@@ -22,9 +22,10 @@ public class User {
     public String address;
     public String phoneNumber;
     public Date dateOfBirth;
-
     public Role role;
     public boolean isVerified;
+    public boolean isUsingMfa;
+    public String secret;
 
     public User() {}
     public User(String firstName,
@@ -67,6 +68,9 @@ public class User {
         this.dateOfBirth = userDTO.dateOfBirth;
         this.role = Role.USER;
         this.isVerified = true;
+        this.isUsingMfa = false;
+        this.secret = "";
+
 
     }
 

@@ -14,6 +14,7 @@ public interface UserService {
     UserDTO getUserByUsername(String username);
     void changeRole(String idUser, Role role);
     UserDTO setKey(LinkRequestDTO linkRequestDTO);
+    String setupMfa(String idUser);
 }
 
 

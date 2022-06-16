@@ -46,8 +46,16 @@ public class GlobalExceptionHandler {
     @ResponseStatus(HttpStatus.NOT_FOUND)
     @ResponseBody
     public String companyNotFound(CompanyNotFoundException e){
-        LOGGER.error(e.getMessage(), e);
+        LOGGER.error("Company not found", e);
         return "Company not found!";
+    }
+
+    @ExceptionHandler(BadRequestException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    @ResponseBody
+    public String badRequestException(BadRequestException e){
+        LOGGER.error(e.getMessage(), e);
+        return "Wrong 2FA code entered!";
     }
 
 }

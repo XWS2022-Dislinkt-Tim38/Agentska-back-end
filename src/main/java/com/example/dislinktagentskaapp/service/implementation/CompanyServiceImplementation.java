@@ -88,7 +88,9 @@ public class CompanyServiceImplementation implements CompanyService {
     @Override
     public CompanyDTO getCompanyByOwner(String ownerId) {
         logger.info("Getting company by user with id: " + ownerId);
-        return new CompanyDTO(companyRepository.findCompanyByidUser(ownerId));
+        Company company = companyRepository.findCompanyByidUser(ownerId);
+        if(company == null) throw new CompanyNotFoundException();
+        return new CompanyDTO(company);
     }
     @Override
     public List<CompanyDTO> getUserCompanies(String userId) {

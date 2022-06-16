@@ -7,6 +7,7 @@ import com.example.dislinktagentskaapp.exception.UsernameExistsException;
 import com.example.dislinktagentskaapp.model.Role;
 import com.example.dislinktagentskaapp.model.User;
 import com.example.dislinktagentskaapp.repository.UserRepository;
+import com.example.dislinktagentskaapp.service.TotpManager;
 import com.example.dislinktagentskaapp.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -24,6 +25,9 @@ public class UserServiceImplementation implements UserService {
     Logger logger = LoggerFactory.getLogger((UserServiceImplementation.class));
     @Autowired
     UserRepository userRepository;
+
+    @Autowired
+    TotpManager totpManager;
 
     public PasswordEncoder passwordEncoder()
     {
@@ -113,6 +117,24 @@ public class UserServiceImplementation implements UserService {
         userRepository.save(user);
         logger.info("Dislinkt key set for user with id: " + user.id);
         return new UserDTO(user);
+    }
+
+    @Override
+    public String setupMfa(String idUser) {
+        User user = userRepository.findById(idUser).orElseThrow(UserNotFoundException::new);
+        user.secret = totpManager.generateSecret();
+        user.isUsingMfa = true;
+
+        try{
+            userRepository.save(user);
+            logger.warn("Changes were made to user with id: " + idUser);
+            logger.warn("2FA enabled for user with id: " + idUser);
+            return totpManager.getUriForImage(user.secret);
+
+        } catch(Exception e) {
+            logger.error("Could not write to database while updating user with id: " + idUser, e);
+            throw e;
+        }
     }
 
 }

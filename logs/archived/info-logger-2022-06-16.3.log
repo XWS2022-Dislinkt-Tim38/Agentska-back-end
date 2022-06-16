@@ -1,0 +1,55 @@
+2022-06-16 15:50:37,251 INFO org.springframework.boot.StartupInfoLogger [main] Started DislinktAgentskaAppApplication in 3.286 seconds (JVM running for 4.016)
+2022-06-16 15:50:37,388 INFO com.example.dislinktagentskaapp.controller.UserController [http-nio-8020-exec-1] GET REQUEST /user/username/{username}
+2022-06-16 15:50:37,473 INFO com.example.dislinktagentskaapp.service.implementation.UserServiceImplementation [http-nio-8020-exec-1] Fetching user with username: com.example.dislinktagentskaapp.model.User@639c3ab7
+2022-06-16 15:50:37,549 INFO com.example.dislinktagentskaapp.controller.CompanyController [http-nio-8020-exec-2] GET REQUEST /company/user/{idOwner}
+2022-06-16 15:50:37,550 INFO com.example.dislinktagentskaapp.service.implementation.CompanyServiceImplementation [http-nio-8020-exec-2] Getting company by user with id: user_45b4a74d-b75e-489f-8d74-26059c00cd8a
+2022-06-16 15:50:44,024 INFO com.example.dislinktagentskaapp.controller.AuthenticationController [http-nio-8020-exec-4] PUT REQUEST /auth/enable2fa/{idUser}
+2022-06-16 15:50:44,058 WARN com.example.dislinktagentskaapp.service.implementation.UserServiceImplementation [http-nio-8020-exec-4] Changes were made to user with id: user_45b4a74d-b75e-489f-8d74-26059c00cd8a
+2022-06-16 15:50:44,059 WARN com.example.dislinktagentskaapp.service.implementation.UserServiceImplementation [http-nio-8020-exec-4] 2FA enabled for user with id: user_45b4a74d-b75e-489f-8d74-26059c00cd8a
+2022-06-16 15:53:05,139 INFO org.springframework.boot.StartupInfoLogger [main] Starting DislinktAgentskaAppApplication using Java 18.0.1.1 on DESKTOP-JN6GJII with PID 9372 (C:\Users\Iodum99\Desktop\Faks Projekti\Agentska-back-end\target\classes started by Iodum99 in C:\Users\Iodum99\Desktop\Faks Projekti\Agentska-back-end)
+2022-06-16 15:53:05,141 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.6.7, Spring v5.3.19
+2022-06-16 15:53:05,142 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2022-06-16 15:53:07,627 INFO org.springframework.boot.StartupInfoLogger [main] Started DislinktAgentskaAppApplication in 2.859 seconds (JVM running for 3.646)
+2022-06-16 15:54:04,138 INFO com.example.dislinktagentskaapp.controller.UserController [http-nio-8020-exec-2] GET REQUEST /user/username/{username}
+2022-06-16 15:54:04,233 INFO com.example.dislinktagentskaapp.service.implementation.UserServiceImplementation [http-nio-8020-exec-2] Fetching user with username: com.example.dislinktagentskaapp.model.User@4a9c9834
+2022-06-16 15:54:04,306 INFO com.example.dislinktagentskaapp.controller.CompanyController [http-nio-8020-exec-1] GET REQUEST /company/user/{idOwner}
+2022-06-16 15:54:04,306 INFO com.example.dislinktagentskaapp.service.implementation.CompanyServiceImplementation [http-nio-8020-exec-1] Getting company by user with id: user_45b4a74d-b75e-489f-8d74-26059c00cd8a
+2022-06-16 15:54:06,449 INFO com.example.dislinktagentskaapp.controller.AuthenticationController [http-nio-8020-exec-3] PUT REQUEST /auth/enable2fa/{idUser}
+2022-06-16 15:54:06,483 WARN com.example.dislinktagentskaapp.service.implementation.UserServiceImplementation [http-nio-8020-exec-3] Changes were made to user with id: user_45b4a74d-b75e-489f-8d74-26059c00cd8a
+2022-06-16 15:54:06,484 WARN com.example.dislinktagentskaapp.service.implementation.UserServiceImplementation [http-nio-8020-exec-3] 2FA enabled for user with id: user_45b4a74d-b75e-489f-8d74-26059c00cd8a
+2022-06-16 15:56:53,945 INFO com.example.dislinktagentskaapp.controller.AuthenticationController [http-nio-8020-exec-5] PUT REQUEST /auth/enable2fa/{idUser}
+2022-06-16 15:56:53,952 WARN com.example.dislinktagentskaapp.service.implementation.UserServiceImplementation [http-nio-8020-exec-5] Changes were made to user with id: user_45b4a74d-b75e-489f-8d74-26059c00cd8a
+2022-06-16 15:56:53,952 WARN com.example.dislinktagentskaapp.service.implementation.UserServiceImplementation [http-nio-8020-exec-5] 2FA enabled for user with id: user_45b4a74d-b75e-489f-8d74-26059c00cd8a
+2022-06-16 15:56:55,153 INFO com.example.dislinktagentskaapp.controller.UserController [http-nio-8020-exec-6] GET REQUEST /user/username/{username}
+2022-06-16 15:56:55,156 INFO com.example.dislinktagentskaapp.service.implementation.UserServiceImplementation [http-nio-8020-exec-6] Fetching user with username: com.example.dislinktagentskaapp.model.User@3a28f54a
+2022-06-16 15:56:55,203 INFO com.example.dislinktagentskaapp.controller.CompanyController [http-nio-8020-exec-7] GET REQUEST /company/user/{idOwner}
+2022-06-16 15:56:55,204 INFO com.example.dislinktagentskaapp.service.implementation.CompanyServiceImplementation [http-nio-8020-exec-7] Getting company by user with id: user_45b4a74d-b75e-489f-8d74-26059c00cd8a
+2022-06-16 15:56:57,780 INFO com.example.dislinktagentskaapp.controller.AuthenticationController [http-nio-8020-exec-9] PUT REQUEST /auth/enable2fa/{idUser}
+2022-06-16 15:56:57,785 WARN com.example.dislinktagentskaapp.service.implementation.UserServiceImplementation [http-nio-8020-exec-9] Changes were made to user with id: user_45b4a74d-b75e-489f-8d74-26059c00cd8a
+2022-06-16 15:56:57,786 WARN com.example.dislinktagentskaapp.service.implementation.UserServiceImplementation [http-nio-8020-exec-9] 2FA enabled for user with id: user_45b4a74d-b75e-489f-8d74-26059c00cd8a
+2022-06-16 15:59:38,097 INFO com.example.dislinktagentskaapp.controller.AuthenticationController [http-nio-8020-exec-2] PUT REQUEST /auth/enable2fa/{idUser}
+2022-06-16 15:59:38,103 WARN com.example.dislinktagentskaapp.service.implementation.UserServiceImplementation [http-nio-8020-exec-2] Changes were made to user with id: user_45b4a74d-b75e-489f-8d74-26059c00cd8a
+2022-06-16 15:59:38,103 WARN com.example.dislinktagentskaapp.service.implementation.UserServiceImplementation [http-nio-8020-exec-2] 2FA enabled for user with id: user_45b4a74d-b75e-489f-8d74-26059c00cd8a
+2022-06-16 15:59:39,196 INFO com.example.dislinktagentskaapp.controller.AuthenticationController [http-nio-8020-exec-1] PUT REQUEST /auth/enable2fa/{idUser}
+2022-06-16 15:59:39,202 WARN com.example.dislinktagentskaapp.service.implementation.UserServiceImplementation [http-nio-8020-exec-1] Changes were made to user with id: user_45b4a74d-b75e-489f-8d74-26059c00cd8a
+2022-06-16 15:59:39,202 WARN com.example.dislinktagentskaapp.service.implementation.UserServiceImplementation [http-nio-8020-exec-1] 2FA enabled for user with id: user_45b4a74d-b75e-489f-8d74-26059c00cd8a
+2022-06-16 16:00:12,302 INFO com.example.dislinktagentskaapp.controller.AuthenticationController [http-nio-8020-exec-4] PUT REQUEST /auth/enable2fa/{idUser}
+2022-06-16 16:00:12,309 WARN com.example.dislinktagentskaapp.service.implementation.UserServiceImplementation [http-nio-8020-exec-4] Changes were made to user with id: user_45b4a74d-b75e-489f-8d74-26059c00cd8a
+2022-06-16 16:00:12,309 WARN com.example.dislinktagentskaapp.service.implementation.UserServiceImplementation [http-nio-8020-exec-4] 2FA enabled for user with id: user_45b4a74d-b75e-489f-8d74-26059c00cd8a
+2022-06-16 16:04:32,324 INFO com.example.dislinktagentskaapp.controller.AuthenticationController [http-nio-8020-exec-6] PUT REQUEST /auth/enable2fa/{idUser}
+2022-06-16 16:04:32,330 WARN com.example.dislinktagentskaapp.service.implementation.UserServiceImplementation [http-nio-8020-exec-6] Changes were made to user with id: user_45b4a74d-b75e-489f-8d74-26059c00cd8a
+2022-06-16 16:04:32,330 WARN com.example.dislinktagentskaapp.service.implementation.UserServiceImplementation [http-nio-8020-exec-6] 2FA enabled for user with id: user_45b4a74d-b75e-489f-8d74-26059c00cd8a
+2022-06-16 16:04:58,775 INFO com.example.dislinktagentskaapp.controller.AuthenticationController [http-nio-8020-exec-8] PUT REQUEST /auth/enable2fa/{idUser}
+2022-06-16 16:04:58,780 WARN com.example.dislinktagentskaapp.service.implementation.UserServiceImplementation [http-nio-8020-exec-8] Changes were made to user with id: user_45b4a74d-b75e-489f-8d74-26059c00cd8a
+2022-06-16 16:04:58,780 WARN com.example.dislinktagentskaapp.service.implementation.UserServiceImplementation [http-nio-8020-exec-8] 2FA enabled for user with id: user_45b4a74d-b75e-489f-8d74-26059c00cd8a
+2022-06-16 16:05:41,477 INFO com.example.dislinktagentskaapp.controller.AuthenticationController [http-nio-8020-exec-9] PUT REQUEST /auth/enable2fa/{idUser}
+2022-06-16 16:05:41,483 WARN com.example.dislinktagentskaapp.service.implementation.UserServiceImplementation [http-nio-8020-exec-9] Changes were made to user with id: user_45b4a74d-b75e-489f-8d74-26059c00cd8a
+2022-06-16 16:05:41,484 WARN com.example.dislinktagentskaapp.service.implementation.UserServiceImplementation [http-nio-8020-exec-9] 2FA enabled for user with id: user_45b4a74d-b75e-489f-8d74-26059c00cd8a
+2022-06-16 16:09:50,759 INFO com.example.dislinktagentskaapp.controller.AuthenticationController [http-nio-8020-exec-2] PUT REQUEST /auth/enable2fa/{idUser}
+2022-06-16 16:09:50,765 WARN com.example.dislinktagentskaapp.service.implementation.UserServiceImplementation [http-nio-8020-exec-2] Changes were made to user with id: user_45b4a74d-b75e-489f-8d74-26059c00cd8a
+2022-06-16 16:09:50,766 WARN com.example.dislinktagentskaapp.service.implementation.UserServiceImplementation [http-nio-8020-exec-2] 2FA enabled for user with id: user_45b4a74d-b75e-489f-8d74-26059c00cd8a
+2022-06-16 16:10:31,454 INFO com.example.dislinktagentskaapp.controller.AuthenticationController [http-nio-8020-exec-1] PUT REQUEST /auth/enable2fa/{idUser}
+2022-06-16 16:10:31,459 WARN com.example.dislinktagentskaapp.service.implementation.UserServiceImplementation [http-nio-8020-exec-1] Changes were made to user with id: user_45b4a74d-b75e-489f-8d74-26059c00cd8a
+2022-06-16 16:10:31,459 WARN com.example.dislinktagentskaapp.service.implementation.UserServiceImplementation [http-nio-8020-exec-1] 2FA enabled for user with id: user_45b4a74d-b75e-489f-8d74-26059c00cd8a
+2022-06-16 16:10:50,004 INFO com.example.dislinktagentskaapp.controller.CompanyController [http-nio-8020-exec-8] GET REQUEST /company
+2022-06-16 16:10:50,007 INFO com.example.dislinktagentskaapp.controller.OfferController [http-nio-8020-exec-7] GET REQUEST /offer
