@@ -38,3 +38,7 @@
 2022-06-17 01:15:39,094 INFO com.example.dislinktagentskaapp.controller.OfferController [http-nio-8020-exec-5] GET REQUEST /offer
 2022-06-17 01:15:39,095 INFO com.example.dislinktagentskaapp.service.implementation.CompanyServiceImplementation [http-nio-8020-exec-4] Fetching all companies
 2022-06-17 01:15:39,096 INFO com.example.dislinktagentskaapp.service.implementation.OfferServiceImplementation [http-nio-8020-exec-5] Fetching all offers
+2022-06-17 13:17:07,680 INFO org.springframework.boot.StartupInfoLogger [main] Starting DislinktAgentskaAppApplicationTests using Java 18.0.1.1 on DESKTOP-JN6GJII with PID 4220 (started by Iodum99 in C:\Users\Iodum99\Desktop\Faks Projekti\Agentska-back-end)
+2022-06-17 13:17:07,683 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.6.7, Spring v5.3.19
+2022-06-17 13:17:07,684 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2022-06-17 13:17:13,052 INFO org.springframework.boot.StartupInfoLogger [main] Started DislinktAgentskaAppApplicationTests in 5.765 seconds (JVM running for 7.354)
